@@ -28,7 +28,7 @@ public class JUnitNZuN {
     @Before
     public void setUp() {
 
-        /** Erzeugung Personen Objekte */
+        /** Erzeugung Personen Objekte  */
         this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
         this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 4,23));
         this.p3 = new PartnerMulti("Maier", "Otto", new Date(1978, 4, 12));
