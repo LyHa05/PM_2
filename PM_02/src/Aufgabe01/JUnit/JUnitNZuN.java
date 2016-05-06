@@ -14,28 +14,84 @@ public class JUnitNZuN {
 
     public PartnerMulti p1;
     public PartnerMulti p2;
+    public PartnerMulti p3;
+    public PartnerMulti p4;
+    public PartnerMulti p5;
+    public PartnerMulti p6;
     public AdresseMulti a1;
     public AdresseMulti a2;
+    public AdresseMulti a3;
+    public AdresseMulti a4;
+    public AdresseMulti a5;
+    public AdresseMulti a6;
 
     @Before
     public void setUp() {
 
-        this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 05, 12));
-        this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 04,23));
-        this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "Dt");
-        this.a2 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
+        /** Erzeugung Personen Objekte */
+        this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
+        this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 4,23));
+        this.p3 = new PartnerMulti("Maier", "Otto", new Date(1978, 4, 12));
+        this.p4 = new PartnerMulti("Hans", "Peter", new Date(1949, 12, 2));
+        this.p5 = new PartnerMulti("Haahn", "Lisa", new Date(1999, 7, 8));
+        this.p6 = new PartnerMulti("Gizeh", "Filter", new Date(2000, 9, 12));
+
+        /** Erzeugung Adress Obejekte */
+        this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "De");
+        this.a2 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "De");
+        this.a3 = new AdresseMulti("Pfandkontainer", 2, 13377, "Hamburg", "De");
+        this.a4 = new AdresseMulti("Hansmeier Str", 23, 22941, "Sonstwo", "De");
+        this.a5 = new AdresseMulti("Peterstruck Str", 42, 22222, "Irgendwo", "De");
+        this.a6 = new AdresseMulti("Jockelsteig", 666, 42424, "Nirgendwo", "US");
+
+        /** Weisen p1 Adressen a1 - a5 zu */
         p1.addAdresse(a1);
         p1.addAdresse(a2);
-        a1.addPartner(p1);
-        a2.addPartner(p2);
+        p1.addAdresse(a3);
+        p1.addAdresse(a4);
+        p1.addAdresse(a5);
+
+        /** Weisen a4 Partner p4 - p6 */
+        a4.addPartner(p4);
+        a4.addPartner(p5);
+        a4.addPartner(p6);
     }
 
+    /**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
     @Test
-    public void test_() {
-        assertEquals(a1, p1.getAdresse());
+    public void test_Adresse_in_ArrayList_von_PartnerMulti() {
+        assertTrue(p1.getAdressenList().contains(a1));
     }
 
-    //
+    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar */
+    @Test
+    public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti() {
+        assertTrue(a4.getAdressenList().contains(p5));
+    }
+
+    /**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
+    @Test
+    public void test_Adresse_in_ArrayList_von_PartnerMulti_2() {
+        assertTrue(p1.getAdressenList().contains(a3));
+    }
+
+    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar */
+    @Test
+    public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti_2() {
+        assertTrue(a4.getAdressenList().contains(p6));
+    }
+
+    /**Objektgleichheit bei gleichen Objekten*/
+    @Test
+    public void test_Adressobjektgleichheit() {
+        assertEquals(a2,a3);
+    }
+
+    /**Objektidentität bei Adressobjekten*/
+    @Test
+    public void test_Adressobjektidentitaet() {
+        assertSame(a2,a3);
+    }
 }
 
 

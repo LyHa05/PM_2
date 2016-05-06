@@ -1,16 +1,9 @@
 package Aufgabe01.JUnit;
 
-import static org.junit.Assert.*;
-
 import java.sql.Date;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import Aufgabe01.PartnerNormal;
-import Aufgabe01.AdresseNormal;
-
-
 
 public class JUnitEinsZuEins {
 
