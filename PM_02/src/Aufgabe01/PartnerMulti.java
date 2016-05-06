@@ -35,8 +35,8 @@ public class PartnerMulti extends Partner {
         }
     }
 
-    public Iterator<Adresse> getAdressenList(){
-        return adressenList.iterator();
+    public ArrayList<Adresse> getAdressenList(){
+        return adressenList;
     }
 
     // Override Methoden
