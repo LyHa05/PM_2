@@ -39,7 +39,7 @@ public class JUnitNZuN {
         /** Erzeugung Adress Obejekte */
         this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "De");
         this.a2 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "De");
-        this.a3 = new AdresseMulti("Pfandkontainer", 2, 13377, "Hamburg", "De");
+        this.a3 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "De");
         this.a4 = new AdresseMulti("Hansmeier Str", 23, 22941, "Sonstwo", "De");
         this.a5 = new AdresseMulti("Peterstruck Str", 42, 22222, "Irgendwo", "De");
         this.a6 = new AdresseMulti("Jockelsteig", 666, 42424, "Nirgendwo", "US");

@@ -1,5 +1,7 @@
 package Aufgabe01;
 
+import Aufgabe01.Adresse;
+
 /**
  * Created by chris on 26.04.16.
  */
@@ -82,7 +84,7 @@ public class Adresse {
             return false;
         }
     }
-
+    
     @Override
     public int hashCode() {
         int result = strasse != null ? strasse.hashCode() : 0;
@@ -92,14 +94,10 @@ public class Adresse {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "Adresse{" +
-                "strasse='" + strasse + '\'' +
-                ", hausnummer=" + hausnummer +
-                ", plz=" + plz +
-                ", land='" + land + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Adresse: " + strasse + ", " + hausnummer + ", " + plz + " " + ort
+				+ ", " + land;
+	}
 }
 

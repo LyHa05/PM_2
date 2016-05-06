@@ -80,13 +80,9 @@ public class Partner {
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "Partner{" +
-                "name='" + name + '\'' +
-                ", vorname='" + vorname + '\'' +
-                ", geburtsdatum=" + geburtsdatum +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Partner: " + vorname + " " + name + ", geboren am " + geburtsdatum;
+	}
 }
 
