@@ -38,6 +38,15 @@ public class AdresseMulti extends Adresse {
         return partnerList;
     }
 
+    @Override
+    public String toString() {
+        return "AdresseMulti{" +
+                "partnerList=" + partnerList +
+                '}';
+    }
+
+    // Override Methods
+
 }
 
 

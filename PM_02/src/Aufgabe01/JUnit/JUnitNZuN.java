@@ -28,13 +28,13 @@ public class JUnitNZuN {
     @Before
     public void setUp() {
 
-        /** Erzeugung Personen Objekte */
+        /** Erzeugung Personen Objekte  */
         this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
         this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 4,23));
         this.p3 = new PartnerMulti("Maier", "Otto", new Date(1978, 4, 12));
         this.p4 = new PartnerMulti("Hans", "Peter", new Date(1949, 12, 2));
         this.p5 = new PartnerMulti("Haahn", "Lisa", new Date(1999, 7, 8));
-        this.p6 = new PartnerMulti("Gizeh", "Filter", new Date(2000, 9, 12));
+        this.p6 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
 
         /** Erzeugung Adress Obejekte */
         this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "De");
@@ -87,10 +87,22 @@ public class JUnitNZuN {
         assertEquals(a2,a3);
     }
 
+    /** Objektgleichheit bei gleichen Objekten */
+    @Test
+    public void test_PartnerObjektGleichheit() {
+        assertEquals(p1,p6);
+    }
+
     /**Objektidentität bei Adressobjekten*/
     @Test
     public void test_Adressobjektidentitaet() {
         assertSame(a2,a3);
+    }
+
+    /** Objektidentität bei Adressobjekten */
+    @Test
+    public void test_PersonenObjektIdentitaet() {
+        assertSame(p1,p6);
     }
 }
 
