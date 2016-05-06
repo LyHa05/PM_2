@@ -38,22 +38,15 @@ public class AdresseMulti extends Adresse {
         return partnerList;
     }
 
-    // Override Methods
     @Override
-    public String toString(){
-        String ausgabePartner = "";
-
-        for(Partner objekt : partnerList){
-            ausgabePartner += ("\'" + "Name   :     " + objekt.getVorname() + "\'");
-            ausgabePartner += ("Vorname :   " + objekt.getName() + "\'");
-            ausgabePartner += ("Geburtsdatum    :   " + objekt.getGeburtsdatum().toString());
-        }
-
-        return  "Name           : " + get() + "\'" +
-                "Vorname        : " + getVorname() + "\'" +
-                "Geburtsdatum   : " + getGeburtsdatum().toString() + "\'" +
-                "Adresse        : \'" + ausgabeAdressen
+    public String toString() {
+        return "AdresseMulti{" +
+                "partnerList=" + partnerList +
+                '}';
     }
+
+    // Override Methods
+
 }
 
 
