@@ -21,7 +21,7 @@ public class JUnitEinsZuN {
 	public void setUp() {
 		
 		this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 05, 12));
-		this.p2 = new PartnerMulti("B�cker", "Gustav", new Date(1979, 04,23));
+		this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 04,23));
 		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");
 		this.a2 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
 		p1.addAdresse(a1);
@@ -30,9 +30,10 @@ public class JUnitEinsZuN {
 		a2.setPartner(p2);
 	}
 
+	/**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
 	@Test
-	public void test_() {
-		fail("Not yet implemented");
+	public void test_Adresse_in_ArrayList_von_PartnerMulti() {
+		assertTrue(p1.getAdressenList().contains(a1));
 	}
 	
 	//

@@ -10,7 +10,7 @@ import org.junit.Test;
 import Aufgabe01.AdresseMulti;
 import Aufgabe01.PartnerMulti;
 
-public class JUnitEinsZuN {
+public class JUnitNZuN {
 
     public PartnerMulti p1;
     public PartnerMulti p2;
