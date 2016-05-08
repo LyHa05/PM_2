@@ -26,8 +26,8 @@ public class JUnitEinsZuN {
 	public void setUp() {
 		
 		/**Erzeugung Personen Objekte*/
-		this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 05, 12));
-		this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 04,23));
+		this.p1 = new PartnerMulti("Meyer", "Ingo", 1999, 05, 12);
+		this.p2 = new PartnerMulti("Baecker", "Gustav", 1979, 04, 23);
 		
 		/**Erzeugung Adress Obejekte*/
 		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");

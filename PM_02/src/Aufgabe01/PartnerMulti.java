@@ -1,8 +1,7 @@
 package Aufgabe01;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
+
 
 /**
 @author: Chris Thiele
@@ -14,14 +13,14 @@ public class PartnerMulti extends Partner {
     private ArrayList<Adresse> adressenList;
 
     /** 2 Konstruktoren, um 1 zu * und * zu * Beziehung darstellen zu können.*/
-    public PartnerMulti(String name, String vorname, Date geburtsdatum, ArrayList<Adresse> adressenList) {
-        super(name, vorname, geburtsdatum);
+    public PartnerMulti(String name, String vorname, int jahr, int monat, int tag, ArrayList<Adresse> adressenList) {
+        super(name, vorname, jahr, monat, tag);
         this.adressenList = adressenList;
         adressenList = new ArrayList<Adresse>();
     }
 
-    public PartnerMulti(String name, String vorname, Date geburtsdatum){
-        super(name, vorname, geburtsdatum);
+    public PartnerMulti(String name, String vorname, int jahr, int monat, int tag){
+        super(name, vorname, jahr, monat, tag);
         adressenList = new ArrayList<Adresse>();
     }
 

@@ -1,24 +1,23 @@
 package Aufgabe01;
 
-import java.util.Date;
-
 /**
 @author: Chris Thiele
 @author: Lydia Pflug
 @date: 08.05.2016
 Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem eine Adresse zugewiesen werden kann.
 */
+
 public class PartnerNormal extends Partner{
     private Adresse adresse;
 
     /** 2 Konstruktoren, um 1 zu * Beziehung darstellen zu können.*/
-    public PartnerNormal(String name, String vorname, Date geburtsdatum, Adresse adresse){
-        super(name, vorname, geburtsdatum);
+    public PartnerNormal(String name, String vorname, int jahr, int monat, int tag, Adresse adresse){
+        super(name, vorname, jahr, monat, tag);
         this.adresse = adresse;
     }
 
-    public PartnerNormal(String name, String vorname, Date geburtsdatum){
-        super(name, vorname, geburtsdatum);
+    public PartnerNormal(String name, String vorname, int jahr, int monat, int tag){
+        super(name, vorname, jahr, monat, tag);
     }
 
     /** Get und Set Methoden*/

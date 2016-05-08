@@ -33,12 +33,12 @@ public class JUnitNZuN {
     public void setUp() {
 
         /**Erzeugung Personen Objekte*/
-        this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
-        this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 4,23));
-        this.p3 = new PartnerMulti("Maier", "Otto", new Date(1978, 4, 12));
-        this.p4 = new PartnerMulti("Hans", "Peter", new Date(1949, 12, 2));
-        this.p5 = new PartnerMulti("Haahn", "Lisa", new Date(1999, 7, 8));
-        this.p6 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
+        this.p1 = new PartnerMulti("Meyer", "Ingo", 1999, 05, 12);
+        this.p2 = new PartnerMulti("Baecker", "Gustav", 1979, 04, 23);
+        this.p3 = new PartnerMulti("Maier", "Otto", 1978, 04, 12);
+        this.p4 = new PartnerMulti("Hans", "Peter", 1949, 12, 02);
+        this.p5 = new PartnerMulti("Haahn", "Lisa", 1999, 07, 01);
+        this.p6 = new PartnerMulti("Meyer", "Ingo", 1999, 05, 12);
 
         /**Erzeugung Adress Obejekte*/
         this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "De");

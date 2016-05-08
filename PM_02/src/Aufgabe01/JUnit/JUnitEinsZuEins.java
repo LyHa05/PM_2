@@ -2,7 +2,6 @@ package Aufgabe01.JUnit;
 
 import static org.junit.Assert.*;
 
-import java.sql.Date;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -27,8 +26,8 @@ public class JUnitEinsZuEins {
 	public void setUp() {
 		
 		/**Erzeugung Personen Objekte*/
-		this.p1 = new PartnerNormal("Mueller", "Kai", new Date(1988, 8, 8));
-		this.p2 = new PartnerNormal("Schmidt", "Marion", new Date(1977, 1, 1));
+		this.p1 = new PartnerNormal("Mueller", "Kai", 1988, 8, 8);
+		this.p2 = new PartnerNormal("Schmidt", "Marion", 1977, 7, 7);
 		
 		/**Erzeugung Adress Obejekte*/
 		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");

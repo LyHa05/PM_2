@@ -1,6 +1,6 @@
 package Aufgabe01;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
 @author: Chris Thiele
@@ -11,13 +11,13 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 public class Partner {
     private String name;
     private String vorname;
-    private Date geburtsdatum;
+    private LocalDate geburtsdatum;
 
     /** Konstruktor*/
-    public Partner(String name, String vorname, Date geburtsdatum){
+    public Partner(String name, String vorname, int jahr, int monat, int tag){
         this.name = name;
         this.vorname = vorname;
-        this.geburtsdatum = geburtsdatum;
+        this.geburtsdatum = LocalDate.of(jahr, monat, tag);
     }
 
 //    public Partner(String name, String vorname){
@@ -42,11 +42,11 @@ public class Partner {
         this.vorname = vorname;
     }
 
-    public Date getGeburtsdatum(){
+    public LocalDate getGeburtsdatum(){
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(Date geburtsdatum){
+    public void setGeburtsdatum(LocalDate geburtsdatum){
         this.geburtsdatum = geburtsdatum;
     }
 
