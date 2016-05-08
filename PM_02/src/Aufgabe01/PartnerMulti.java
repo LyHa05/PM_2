@@ -42,22 +42,8 @@ public class PartnerMulti extends Partner {
         return adressenList;
     }
 
-    @Override
-    public String toString(){
-        String ausgabeAdressen = "";
-
-        for(Adresse objekt : adressenList){
-            ausgabeAdressen += ("\'" + objekt.getStrasse() + "\'");
-            ausgabeAdressen += (objekt.getHausnummer() + "\'");
-            ausgabeAdressen += (objekt.getPlz() + "\n");
-            ausgabeAdressen += (objekt.getOrt() + "\n");
-            ausgabeAdressen += (objekt.getLand() + "\n");
-            ausgabeAdressen += "\'\'";
-        }
-
-        return  "Name           : " + getName() + "\'" +
-                "Vorname        : " + getVorname() + "\'" +
-                "Geburtsdatum   : " + getGeburtsdatum().toString() + "\'" +
-                "Adresse        : \'" + ausgabeAdressen;
-    }
+	@Override
+	public String toString() {
+		return super.toString() + "\n"+ "Adressen: " + adressenList;
+	}
 }

@@ -99,8 +99,8 @@ public class Adresse {
 
 	@Override
 	public String toString() {
-		return "Adresse: " + strasse + ", " + hausnummer + ", " + plz + " " + ort
-				+ ", " + land;
+		return "Adresse: " + strasse + " " + hausnummer + ", " + plz + " " + ort
+				+ ", " + land+ " ";
 	}
 }
 

@@ -29,15 +29,10 @@ public class AdresseNormal extends Adresse {
 		this.partner = partner;
 	}
 
-    @Override
-    public String toString() {
-        return "Adresse{" +
-                "strasse='" + getStrasse() + '\'' +
-                ", hausnummer=" + getHausnummer() +
-                ", plz=" + getPlz() +
-                ", land='" + getLand() + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return super.toString() + "Partner: " + partner;
+	}
 }
 
 

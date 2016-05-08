@@ -30,21 +30,9 @@ public class PartnerNormal extends Partner{
         this.adresse = adresse;
     }
 
-    @Override
-    public String toString(){
-        String ausgabeAdressen = "";
-
-        ausgabeAdressen += ("\'" + adresse.getStrasse() + "\'");
-        ausgabeAdressen += (adresse.getHausnummer() + "\'");
-        ausgabeAdressen += (adresse.getPlz() + "\n");
-        ausgabeAdressen += (adresse.getOrt() + "\n");
-        ausgabeAdressen += (adresse.getLand() + "\n");
-        ausgabeAdressen += "\'\'";
-
-        return  "Name           : " + getName() + "\'" +
-                "Vorname        : " + getVorname() + "\'" +
-                "Geburtsdatum   : " + getGeburtsdatum().toString() + "\'" +
-                "Adresse        : \'" + ausgabeAdressen;
-    }
+	@Override
+	public String toString() {
+		return super.toString() + this.adresse.toString();
+	}
 
 }
