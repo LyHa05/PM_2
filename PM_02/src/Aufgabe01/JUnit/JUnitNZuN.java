@@ -70,7 +70,7 @@ public class JUnitNZuN {
     /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/
     @Test
     public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti() {
-        assertTrue(a4.getAdressenList().contains(p5));
+        assertTrue(a4.getPartnerList().contains(p5));
     }
 
     /**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
@@ -82,7 +82,7 @@ public class JUnitNZuN {
     /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/
     @Test
     public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti_2() {
-        assertTrue(a4.getAdressenList().contains(p6));
+        assertTrue(a4.getPartnerList().contains(p6));
     }
 
     /**Objektgleichheit bei gleichen Objekten*/
