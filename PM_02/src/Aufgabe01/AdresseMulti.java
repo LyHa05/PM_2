@@ -1,7 +1,7 @@
 package Aufgabe01;
 
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 /**
  @author: Chris Thiele
@@ -12,7 +12,7 @@ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnu
 public class AdresseMulti extends Adresse {
     private ArrayList<Partner> partnerList;
 
-    // Konstruktoren
+    /** 2 Konstruktoren, um 1 zu * und * zu * Beziehung darstellen zu können.*/
     public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land, ArrayList<Partner> partnerList){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerList = partnerList;
@@ -24,14 +24,14 @@ public class AdresseMulti extends Adresse {
         partnerList = new ArrayList<Partner>();
     }
 
-    // Get und Set Methoden
+    /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Partnern*/
     public void addPartner(Partner partner){
         if(!(partnerList.contains(partner))){
             partnerList.add(partner);
         }
     }
 
-    public void removePartner(Adresse partner){
+    public void removePartner(Partner partner){
         if(partnerList.contains(partner)){
             partnerList.remove(partner);
         }
@@ -47,8 +47,6 @@ public class AdresseMulti extends Adresse {
                 "partnerList=" + partnerList +
                 '}';
     }
-
-    // Override Methods
 
 }
 

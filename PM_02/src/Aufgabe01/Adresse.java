@@ -16,7 +16,7 @@ public class Adresse {
     private String land;
 
 
-    // Konstruktoren
+    /** Konstruktor*/
     public Adresse(String strasse, int hausnummer, int plz, String ort, String land){
         this.strasse = strasse;
         this.hausnummer = hausnummer;
@@ -25,7 +25,7 @@ public class Adresse {
         this.land = land;
     }
 
-    // Get und Set Methoden
+    /** Get und Set Methoden*/
     public String getStrasse() {
         return strasse;
     }
@@ -66,7 +66,7 @@ public class Adresse {
         this.land = land;
     }
 
-    // Override Methoden
+    /** Anpassung von equals() und hashCode() an Klasse*/
     @Override
     public boolean equals(Object obj){
         if(this == obj){

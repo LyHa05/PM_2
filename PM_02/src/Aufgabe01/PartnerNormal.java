@@ -11,7 +11,7 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 public class PartnerNormal extends Partner{
     private Adresse adresse;
 
-    // Konstruktoren
+    /** 2 Konstruktoren, um 1 zu * Beziehung darstellen zu können.*/
     public PartnerNormal(String name, String vorname, Date geburtsdatum, Adresse adresse){
         super(name, vorname, geburtsdatum);
         this.adresse = adresse;
@@ -21,7 +21,7 @@ public class PartnerNormal extends Partner{
         super(name, vorname, geburtsdatum);
     }
 
-    // Get und Set Methode
+    /** Get und Set Methoden*/
     public Adresse getAdresse(){
         return adresse;
     }
@@ -30,7 +30,6 @@ public class PartnerNormal extends Partner{
         this.adresse = adresse;
     }
 
-    //Override Methode
     @Override
     public String toString(){
         String ausgabeAdressen = "";

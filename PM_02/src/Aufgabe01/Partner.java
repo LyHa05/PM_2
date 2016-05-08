@@ -13,19 +13,19 @@ public class Partner {
     private String vorname;
     private Date geburtsdatum;
 
-    // Konstruktoren
+    /** Konstruktor*/
     public Partner(String name, String vorname, Date geburtsdatum){
         this.name = name;
         this.vorname = vorname;
         this.geburtsdatum = geburtsdatum;
     }
 
-    public Partner(String name, String vorname){
-        this.name = name;
-        this.vorname = vorname;
-    }
+//    public Partner(String name, String vorname){
+//        this.name = name;
+//        this.vorname = vorname;
+//    }
 
-    // Get und Set Methoden
+    /** Get und Set Methoden*/
     public String getName(){
         return name;
     }
@@ -50,7 +50,7 @@ public class Partner {
         this.geburtsdatum = geburtsdatum;
     }
 
-    // Override Methoden
+    /** Anpassung von equals() und hashCode() an Klasse*/
     @Override
     public boolean equals(Object obj){
 
@@ -74,7 +74,8 @@ public class Partner {
         }
 
     }
-
+    
+    /** Anpassung von equals() und hashCode() an Klasse*/
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;

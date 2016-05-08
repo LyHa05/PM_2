@@ -9,7 +9,7 @@ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnu
 public class AdresseNormal extends Adresse {
     private Partner partner;
 
-    // Konstruktoren
+    /** 2 Konstruktoren, um 1 zu * Beziehung darstellen zu können.*/
     public AdresseNormal(String strasse, int hausnummer, int plz, String ort, String land, Partner partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
@@ -19,7 +19,7 @@ public class AdresseNormal extends Adresse {
         super(strasse, hausnummer, plz, ort, land);
     }
 
-    // Get und Set Methoden
+    /** Get und Set Methoden*/
     public Partner getPartner(){
         return partner;
     }
@@ -29,7 +29,6 @@ public class AdresseNormal extends Adresse {
 		this.partner = partner;
 	}
 
-	// Override Methods
     @Override
     public String toString() {
         return "Adresse{" +

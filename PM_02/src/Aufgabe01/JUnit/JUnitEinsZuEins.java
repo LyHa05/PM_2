@@ -1,8 +1,13 @@
 package Aufgabe01.JUnit;
 
+import static org.junit.Assert.*;
+
 import java.sql.Date;
 import org.junit.Before;
 import org.junit.Test;
+
+import Aufgabe01.AdresseNormal;
+import Aufgabe01.PartnerNormal;
 
 /**
 @author: Chris Thiele
