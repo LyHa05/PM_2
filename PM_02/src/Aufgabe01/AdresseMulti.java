@@ -37,7 +37,7 @@ public class AdresseMulti extends Adresse {
         }
     }
 
-    public ArrayList<Partner> getAdressenList(){
+    public ArrayList<Partner> getPartnerList(){
         return partnerList;
     }
 
