@@ -25,13 +25,20 @@ public class JUnitEinsZuN {
 	@Before
 	public void setUp() {
 		
+		/**Erzeugung Personen Objekte*/
 		this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 05, 12));
 		this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 04,23));
+		
+		/**Erzeugung Adress Obejekte*/
 		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");
 		this.a2 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
 		this.a3 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
+		
+		/** Weisen p1 Adressen a1 und a2 zu*/
 		p1.addAdresse(a1);
 		p1.addAdresse(a2);
+		
+		/** Weisen a1 und a2 Partner p1  und p2 zu*/
 		a1.setPartner(p1);
 		a2.setPartner(p2);
 	}

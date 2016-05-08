@@ -26,14 +26,19 @@ public class JUnitEinsZuEins {
 	@Before
 	public void setUp() {
 		
-//		PartnerMulti p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 05, 12));
+		/**Erzeugung Personen Objekte*/
 		this.p1 = new PartnerNormal("Mueller", "Kai", new Date(1988, 8, 8));
 		this.p2 = new PartnerNormal("Schmidt", "Marion", new Date(1977, 1, 1));
+		
+		/**Erzeugung Adress Obejekte*/
 		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");
 		this.a2 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
-//		AdresseMulti a3 = new AdresseMulti("Am Weg", 3, 33333, "Bergdorf", "Dt");
+		
+		/** Weisen p1  und p2 Adressen a1 und a2 zu*/
 		p1.setAdresse(a1);
 		p2.setAdresse(a2);
+		
+		/** Weisen a1 und a2 Partner p1  und p2 zu*/
 		a1.setPartner(p1);
 		a2.setPartner(p2);
 	}

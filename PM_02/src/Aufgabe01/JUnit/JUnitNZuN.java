@@ -32,7 +32,7 @@ public class JUnitNZuN {
     @Before
     public void setUp() {
 
-        /** Erzeugung Personen Objekte  */
+        /**Erzeugung Personen Objekte*/
         this.p1 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
         this.p2 = new PartnerMulti("Baecker", "Gustav", new Date(1979, 4,23));
         this.p3 = new PartnerMulti("Maier", "Otto", new Date(1978, 4, 12));
@@ -40,7 +40,7 @@ public class JUnitNZuN {
         this.p5 = new PartnerMulti("Haahn", "Lisa", new Date(1999, 7, 8));
         this.p6 = new PartnerMulti("Meyer", "Ingo", new Date(1999, 5, 12));
 
-        /** Erzeugung Adress Obejekte */
+        /**Erzeugung Adress Obejekte*/
         this.a1 = new AdresseMulti("Bruecke", 2, 11111, "Berghausen", "De");
         this.a2 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "De");
         this.a3 = new AdresseMulti("Muelleimer", 5, 22222, "Wiesendorf", "De");
@@ -48,14 +48,14 @@ public class JUnitNZuN {
         this.a5 = new AdresseMulti("Peterstruck Str", 42, 22222, "Irgendwo", "De");
         this.a6 = new AdresseMulti("Jockelsteig", 666, 42424, "Nirgendwo", "US");
 
-        /** Weisen p1 Adressen a1 - a5 zu */
+        /** Weisen p1 Adressen a1 - a5 zu*/
         p1.addAdresse(a1);
         p1.addAdresse(a2);
         p1.addAdresse(a3);
         p1.addAdresse(a4);
         p1.addAdresse(a5);
 
-        /** Weisen a4 Partner p4 - p6 */
+        /** Weisen a4 Partner p4 - p6*/
         a4.addPartner(p4);
         a4.addPartner(p5);
         a4.addPartner(p6);
@@ -67,7 +67,7 @@ public class JUnitNZuN {
         assertTrue(p1.getAdressenList().contains(a1));
     }
 
-    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar */
+    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/
     @Test
     public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti() {
         assertTrue(a4.getAdressenList().contains(p5));
@@ -79,7 +79,7 @@ public class JUnitNZuN {
         assertTrue(p1.getAdressenList().contains(a3));
     }
 
-    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar */
+    /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/
     @Test
     public void test_Partnerobjekt_in_ArrayList_von_AdresseMulti_2() {
         assertTrue(a4.getAdressenList().contains(p6));
@@ -91,7 +91,7 @@ public class JUnitNZuN {
         assertEquals(a2,a3);
     }
 
-    /** Objektgleichheit bei gleichen Objekten */
+    /** Objektgleichheit bei gleichen Objekten*/
     @Test
     public void test_PartnerObjektGleichheit() {
         assertEquals(p1,p6);
@@ -103,7 +103,7 @@ public class JUnitNZuN {
         assertNotSame(a2,a3);
     }
 
-    /** Objektidentität bei Adressobjekten */
+    /** Objektidentität bei Adressobjekten*/
     @Test
     public void test_PersonenObjektIdentitaet() {
         assertNotSame(p1,p6);
