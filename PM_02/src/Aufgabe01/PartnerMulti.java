@@ -5,8 +5,11 @@ import java.util.Date;
 import java.util.Iterator;
 
 /**
- * Created by chris on 28.04.16.
- */
+@author: Chris Thiele
+@author: Lydia Pflug
+@date: 08.05.2016
+Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem mehrere Adressen zugewiesen werden können.
+*/
 public class PartnerMulti extends Partner {
     private ArrayList<Adresse> adressenList;
 

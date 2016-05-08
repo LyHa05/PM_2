@@ -1,9 +1,11 @@
 package Aufgabe01;
 
 /**
- * @author: chris
- * @author: lydia
- */
+ @author: Chris Thiele
+ @author: Lydia Pflug
+ @date: 08.05.2016
+Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), der ein Partner zugewiesen werden kann.
+*/
 public class AdresseNormal extends Adresse {
     private Partner partner;
 

@@ -3,7 +3,10 @@ package Aufgabe01;
 import Aufgabe01.Adresse;
 
 /**
- * Created by chris on 26.04.16.
+ @author: Chris Thiele
+ @author: Lydia Pflug
+ @date: 08.05.2016
+ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land).
  */
 public class Adresse {
     private String strasse;

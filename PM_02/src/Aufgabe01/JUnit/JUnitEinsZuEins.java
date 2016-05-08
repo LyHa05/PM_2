@@ -1,9 +1,15 @@
 package Aufgabe01.JUnit;
 
 import java.sql.Date;
-
 import org.junit.Before;
 import org.junit.Test;
+
+/**
+@author: Chris Thiele
+@author: Lydia Pflug
+@date: 08.05.2016
+Diese Klasse testet die 1:1 Assoziation zwischen Partner und Adresse.
+*/
 
 public class JUnitEinsZuEins {
 

@@ -3,8 +3,11 @@ package Aufgabe01;
 import java.util.Date;
 
 /**
- * Created by chris on 02.05.16.
- */
+@author: Chris Thiele
+@author: Lydia Pflug
+@date: 08.05.2016
+Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem eine Adresse zugewiesen werden kann.
+*/
 public class PartnerNormal extends Partner{
     private Adresse adresse;
 

@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * Created by chris on 02.05.16.
- */
+ @author: Chris Thiele
+ @author: Lydia Pflug
+ @date: 08.05.2016
+Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), die  mehreren Partner zugewiesen werden kann.
+*/
 public class AdresseMulti extends Adresse {
     private ArrayList<Partner> partnerList;
 

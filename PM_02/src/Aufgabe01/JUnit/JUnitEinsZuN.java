@@ -1,14 +1,18 @@
 package Aufgabe01.JUnit;
 
 import static org.junit.Assert.*;
-
 import java.sql.Date;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import Aufgabe01.AdresseNormal;
 import Aufgabe01.PartnerMulti;
+
+/**
+@author: Chris Thiele
+@author: Lydia Pflug
+@date: 08.05.2016
+Diese Klasse testet die 1:N Assoziation zwischen Partner und Adresse.
+*/
 
 public class JUnitEinsZuN {
 	
@@ -53,7 +57,7 @@ public class JUnitEinsZuN {
 	/**Objektidentität bei Adressobjekten*/
 	@Test
 	public void test_Adressobjektidentitaet() {
-		assertSame(a2,a3);
+		assertNotSame(a2,a3);
 	}
 	
 }

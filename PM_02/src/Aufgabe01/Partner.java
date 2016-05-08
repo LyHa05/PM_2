@@ -3,8 +3,11 @@ package Aufgabe01;
 import java.util.Date;
 
 /**
- *
- */
+@author: Chris Thiele
+@author: Lydia Pflug
+@date: 08.05.2016
+Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum).
+*/
 public class Partner {
     private String name;
     private String vorname;
