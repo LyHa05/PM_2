@@ -20,11 +20,6 @@ public class Partner {
         this.geburtsdatum = LocalDate.of(jahr, monat, tag);
     }
 
-//    public Partner(String name, String vorname){
-//        this.name = name;
-//        this.vorname = vorname;
-//    }
-
     /** Get und Set Methoden*/
     public String getName(){
         return name;
@@ -44,10 +39,6 @@ public class Partner {
 
     public LocalDate getGeburtsdatum(){
         return geburtsdatum;
-    }
-
-    public void setGeburtsdatum(LocalDate geburtsdatum){
-        this.geburtsdatum = geburtsdatum;
     }
 
     /** Anpassung von equals() und hashCode() an Klasse*/

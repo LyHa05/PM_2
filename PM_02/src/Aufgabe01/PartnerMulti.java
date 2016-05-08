@@ -12,7 +12,7 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 public class PartnerMulti extends Partner {
     private ArrayList<Adresse> adressenList;
 
-    /** 2 Konstruktoren, um 1 zu * und * zu * Beziehung darstellen zu können.*/
+    /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
     public PartnerMulti(String name, String vorname, int jahr, int monat, int tag, ArrayList<Adresse> adressenList) {
         super(name, vorname, jahr, monat, tag);
         this.adressenList = adressenList;

@@ -10,7 +10,7 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 public class PartnerNormal extends Partner{
     private Adresse adresse;
 
-    /** 2 Konstruktoren, um 1 zu * Beziehung darstellen zu können.*/
+    /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
     public PartnerNormal(String name, String vorname, int jahr, int monat, int tag, Adresse adresse){
         super(name, vorname, jahr, monat, tag);
         this.adresse = adresse;

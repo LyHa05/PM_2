@@ -12,7 +12,7 @@ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnu
 public class AdresseMulti extends Adresse {
     private ArrayList<Partner> partnerList;
 
-    /** 2 Konstruktoren, um 1 zu * und * zu * Beziehung darstellen zu können.*/
+    /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
     public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land, ArrayList<Partner> partnerList){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerList = partnerList;
