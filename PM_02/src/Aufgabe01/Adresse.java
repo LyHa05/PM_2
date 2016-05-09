@@ -15,7 +15,6 @@ abstract public class Adresse {
     private String ort;
     private String land;
 
-
     /** Konstruktor*/
     public Adresse(String strasse, int hausnummer, int plz, String ort, String land){
         this.strasse = strasse;
