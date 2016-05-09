@@ -14,6 +14,8 @@ abstract public class Adresse {
     private int plz;
     private String ort;
     private String land;
+    
+    // Test
 
     /** Konstruktor*/
     public Adresse(String strasse, int hausnummer, int plz, String ort, String land){
