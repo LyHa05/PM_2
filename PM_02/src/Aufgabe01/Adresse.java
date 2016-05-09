@@ -8,7 +8,7 @@ import Aufgabe01.Adresse;
  @date: 08.05.2016
  Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land).
  */
-public class Adresse {
+abstract public class Adresse {
     private String strasse;
     private int hausnummer;
     private int plz;
