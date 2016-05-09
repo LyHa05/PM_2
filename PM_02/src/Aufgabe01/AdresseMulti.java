@@ -1,6 +1,6 @@
 package Aufgabe01;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 
 /**
@@ -10,40 +10,40 @@ import java.util.ArrayList;
 Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), die  mehreren Partner zugewiesen werden kann.
 */
 public class AdresseMulti extends Adresse {
-    private ArrayList<Partner> partnerList;
+    private HashSet<Partner> partnerSet;
 
     /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
-    public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land, ArrayList<Partner> partnerList){
+    public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land, HashSet<Partner> partnerSet){
         super(strasse, hausnummer, plz, ort, land);
-        this.partnerList = partnerList;
-        partnerList = new ArrayList<Partner>();
+        this.partnerSet = partnerSet;
+        partnerSet = new HashSet<Partner>();
     }
 
     public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
-        partnerList = new ArrayList<Partner>();
+        partnerSet = new HashSet<Partner>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Partnern*/
     public void addPartner(Partner partner){
-        if(!(partnerList.contains(partner))){
-            partnerList.add(partner);
+        if(!(partnerSet.contains(partner))){
+            partnerSet.add(partner);
         }
     }
 
     public void removePartner(Partner partner){
-        if(partnerList.contains(partner)){
-            partnerList.remove(partner);
+        if(partnerSet.contains(partner)){
+            partnerSet.remove(partner);
         }
     }
 
-    public ArrayList<Partner> getPartnerList(){
-        return partnerList;
+    public HashSet<Partner> getPartnerSet(){
+        return partnerSet;
     }
 
 	@Override
 	public String toString() {
-		return " Partner: " + partnerList;
+		return " Partner: " + partnerSet;
 	}
 
 }

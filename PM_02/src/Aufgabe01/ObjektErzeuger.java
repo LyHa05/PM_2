@@ -8,6 +8,7 @@ public class ObjektErzeuger {
 	AdresseNormal a = new AdresseNormal(strasse, hausnummer, plz, ort, land);
 	
 	p.setAdresse(a);
+	a.setPartner(p);
 	
 	return p;
 

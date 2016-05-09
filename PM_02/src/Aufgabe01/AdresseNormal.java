@@ -15,9 +15,12 @@ public class AdresseNormal extends Adresse {
         this.partner = partner;
     }
 
+    
+    /** veraltet, muss entfernt werden */
     public AdresseNormal(String strasse, int hausnummer, int plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
     }
+    
 
     /** Get und Set Methoden*/
     public Partner getPartner(){

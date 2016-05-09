@@ -6,7 +6,7 @@ import Aufgabe01.Adresse;
  @author: Chris Thiele
  @author: Lydia Pflug
  @date: 08.05.2016
- Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land).
+ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort undLand).
  */
 abstract public class Adresse {
     private String strasse;
@@ -14,8 +14,6 @@ abstract public class Adresse {
     private int plz;
     private String ort;
     private String land;
-    
-    // Test
 
     /** Konstruktor*/
     public Adresse(String strasse, int hausnummer, int plz, String ort, String land){

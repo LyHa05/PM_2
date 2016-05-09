@@ -1,48 +1,48 @@
 package Aufgabe01;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 
 /**
 @author: Chris Thiele
 @author: Lydia Pflug
 @date: 08.05.2016
-Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem mehrere Adressen zugewiesen werden können.
+Diese Klasse  modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem mehrere Adressen zugewiesen werden können.
 */
 public class PartnerMulti extends Partner {
-    private ArrayList<Adresse> adressenList;
+    private HashSet<Adresse> adressenSet;
 
     /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
-    public PartnerMulti(String name, String vorname, int jahr, int monat, int tag, ArrayList<Adresse> adressenList) {
+    public PartnerMulti(String name, String vorname, int jahr, int monat, int tag, HashSet<Adresse> adressenList) {
         super(name, vorname, jahr, monat, tag);
-        this.adressenList = adressenList;
-        adressenList = new ArrayList<Adresse>();
+        this.adressenSet = adressenList;
+        adressenList = new HashSet<Adresse>();
     }
 
     public PartnerMulti(String name, String vorname, int jahr, int monat, int tag){
         super(name, vorname, jahr, monat, tag);
-        adressenList = new ArrayList<Adresse>();
+        adressenSet = new HashSet<Adresse>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Adressen*/
     public void addAdresse(Adresse adresse) {
-        if (!(adressenList.contains(adresse))) {
-            adressenList.add(adresse);
+        if (!(adressenSet.contains(adresse))) {
+            adressenSet.add(adresse);
         }
     }
 
     public void removeAdresse(Adresse adresse){
-        if(adressenList.contains(adresse)){
-            adressenList.remove(adresse);
+        if(adressenSet.contains(adresse)){
+            adressenSet.remove(adresse);
         }
     }
 
-    public ArrayList<Adresse> getAdressenList(){
-        return adressenList;
+    public HashSet<Adresse> getAdressenList(){
+        return adressenSet;
     }
 
 	@Override
 	public String toString() {
-		return super.toString() + "\n"+ "Adressen: " + adressenList;
+		return super.toString() + "\n"+ "Adressen: " + adressenSet;
 	}
 }
