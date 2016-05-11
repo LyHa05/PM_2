@@ -6,18 +6,18 @@ package Aufgabe01;
  @date: 08.05.2016
 Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), der ein Partner zugewiesen werden kann.
 */
-public class AdresseNormal extends Adresse {
+public class AdresseSingle extends Adresse {
     private Partner partner;
 
     /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
-    public AdresseNormal(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
+    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
     }
 
     
     /** veraltet, muss entfernt werden */
-    public AdresseNormal(String strasse, int hausnummer, String plz, String ort, String land){
+    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
     }
     

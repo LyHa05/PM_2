@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import java.sql.Date;
 import org.junit.Before;
 import org.junit.Test;
-import Aufgabe01.AdresseNormal;
+import Aufgabe01.AdresseSingle;
 import Aufgabe01.PartnerMulti;
 
 /**
@@ -18,9 +18,9 @@ public class JUnitEinsZuN {
 	
 	public PartnerMulti p1;
 	public PartnerMulti p2;
-	public AdresseNormal a1;
-	public AdresseNormal a2;
-	public AdresseNormal a3;
+	public AdresseSingle a1;
+	public AdresseSingle a2;
+	public AdresseSingle a3;
 
 	@Before
 	public void setUp() {
@@ -30,9 +30,9 @@ public class JUnitEinsZuN {
 		this.p2 = new PartnerMulti("Baecker", "Gustav", 1979, 04, 23);
 		
 		/**Erzeugung Adress Obejekte*/
-		this.a1 = new AdresseNormal("Bruecke", 2, "11111", "Berghausen", "Dt");
-		this.a2 = new AdresseNormal("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
-		this.a3 = new AdresseNormal("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
+		this.a1 = new AdresseSingle("Bruecke", 2, "11111", "Berghausen", "Dt");
+		this.a2 = new AdresseSingle("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
+		this.a3 = new AdresseSingle("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		
 		/** Weisen p1 Adressen a1 und a2 zu*/
 		p1.addAdresse(a1);
