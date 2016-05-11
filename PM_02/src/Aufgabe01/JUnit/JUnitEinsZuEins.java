@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Aufgabe01.AdresseSingle;
+import Aufgabe01.ObjektErzeuger;
 import Aufgabe01.PartnerSingle;
 
 /**
@@ -21,9 +22,14 @@ public class JUnitEinsZuEins {
 	public PartnerSingle p2;
 	public AdresseSingle a1;
 	public AdresseSingle a2;
+	
+	public PartnerSingle p9;
+	public AdresseSingle a9;
 		
 	@Before
 	public void setUp() {
+		
+	p9 = ObjektErzeuger.erzeugen("Maier", "Klaus", 1997, 05, 22, "Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		
 		/**Erzeugung Personen Objekte*/
 		this.p1 = new PartnerSingle("Mueller", "Kai", 1988, 8, 8);

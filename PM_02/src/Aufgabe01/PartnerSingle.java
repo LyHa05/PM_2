@@ -16,9 +16,9 @@ public class PartnerSingle extends Partner{
         this.adresse = adresse;
     }
 
-    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag){
-        super(name, vorname, jahr, monat, tag);
-    }
+//    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag){
+//        super(name, vorname, jahr, monat, tag);
+//    }
 
     /** Get und Set Methoden*/
     public Adresse getAdresse(){

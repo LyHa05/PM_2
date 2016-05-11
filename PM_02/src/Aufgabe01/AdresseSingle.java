@@ -16,10 +16,10 @@ public class AdresseSingle extends Adresse {
     }
 
     
-    /** veraltet, muss entfernt werden */
-    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
-        super(strasse, hausnummer, plz, ort, land);
-    }
+//    /** veraltet, muss entfernt werden */
+//    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
+//        super(strasse, hausnummer, plz, ort, land);
+//    }
     
 
     /** Get und Set Methoden*/
