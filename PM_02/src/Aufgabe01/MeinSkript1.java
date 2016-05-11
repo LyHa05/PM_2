@@ -15,6 +15,8 @@ public class MeinSkript1 {
 		AdresseSingle a1 = new AdresseSingle("Bruecke", 2, "11111", "Berghausen", "Dt");
 		AdresseSingle a2 = new AdresseSingle("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		PartnerSingle p2 = new PartnerSingle("Schmidt", "Marion", 1977, 12, 01);
+		
+		
 		System.out.println(p1);
 		p1.addAdresse(a1);
 		System.out.println(p1);

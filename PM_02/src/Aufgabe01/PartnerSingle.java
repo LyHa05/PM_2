@@ -10,15 +10,24 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 public class PartnerSingle extends Partner{
     private Adresse adresse;
 
-    /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
+    /** 2 Konstruktoren, um "1 zu 1" Beziehung darstellen zu können.*/
     public PartnerSingle(String name, String vorname, int jahr, int monat, int tag, Adresse adresse){
         super(name, vorname, jahr, monat, tag);
         this.adresse = adresse;
     }
 
-//    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag){
-//        super(name, vorname, jahr, monat, tag);
-//    }
+    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag, String strasse, int hausnummer, String plz, String ort, String land){
+        super(name, vorname, jahr, monat, tag);
+        
+        AdresseSingle a = new AdresseSingle(strasse, hausnummer, plz, ort, land, this);
+        this.setAdresse(a);
+        
+    }
+    
+    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag){
+    	super(name, vorname, jahr, monat, tag);
+    	throw new IllegalArgumentException("PartnerSingle kann nur mit Adresse erstellt!");
+    }
 
     /** Get und Set Methoden*/
     public Adresse getAdresse(){

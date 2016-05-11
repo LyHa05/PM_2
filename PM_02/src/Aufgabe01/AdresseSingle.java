@@ -15,11 +15,17 @@ public class AdresseSingle extends Adresse {
         this.partner = partner;
     }
 
+    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land, String name, String vorname, int jahr, int monat, int tag){
+        super(strasse, hausnummer, plz, ort, land);
+        PartnerMulti p = new PartnerMulti(name, vorname, jahr, monat, tag);
+        this.setPartner(p);
+    }
     
-//    /** veraltet, muss entfernt werden */
-//    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
-//        super(strasse, hausnummer, plz, ort, land);
-//    }
+    /** veraltet, muss entfernt werden */
+    public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
+        super(strasse, hausnummer, plz, ort, land);
+        throw new IllegalArgumentException("Adresse darf nicht ohne Partner erstellt werden!");
+    }
     
 
     /** Get und Set Methoden*/
