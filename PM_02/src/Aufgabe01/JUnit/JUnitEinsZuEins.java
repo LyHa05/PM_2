@@ -30,8 +30,8 @@ public class JUnitEinsZuEins {
 		this.p2 = new PartnerNormal("Schmidt", "Marion", 1977, 7, 7);
 		
 		/**Erzeugung Adress Obejekte*/
-		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");
-		this.a2 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
+		this.a1 = new AdresseNormal("Bruecke", 2, "11111", "Berghausen", "Dt");
+		this.a2 = new AdresseNormal("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		
 		/** Weisen p1  und p2 Adressen a1 und a2 zu*/
 		p1.setAdresse(a1);

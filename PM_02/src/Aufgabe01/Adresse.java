@@ -11,12 +11,12 @@ import Aufgabe01.Adresse;
 abstract public class Adresse {
     private String strasse;
     private int hausnummer;
-    private int plz;
+    private String plz;
     private String ort;
     private String land;
 
     /** Konstruktor*/
-    public Adresse(String strasse, int hausnummer, int plz, String ort, String land){
+    public Adresse(String strasse, int hausnummer, String plz, String ort, String land){
         this.strasse = strasse;
         this.hausnummer = hausnummer;
         this.plz = plz;
@@ -41,11 +41,11 @@ abstract public class Adresse {
         this.hausnummer = hausnummer;
     }
 
-    public int getPlz() {
+    public String getPlz() {
         return plz;
     }
 
-    public void setPlz(int plz) {
+    public void setPlz(String plz) {
         this.plz = plz;
     }
 
@@ -91,7 +91,7 @@ abstract public class Adresse {
     public int hashCode() {
         int result = strasse != null ? strasse.hashCode() : 0;
         result = 31 * result + hausnummer;
-        result = 31 * result + plz;
+        result = 31 * result + (plz != null ? plz.hashCode() : 0);
         result = 31 * result + (land != null ? land.hashCode() : 0);
         return result;
     }

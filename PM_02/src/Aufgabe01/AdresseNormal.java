@@ -10,14 +10,14 @@ public class AdresseNormal extends Adresse {
     private Partner partner;
 
     /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
-    public AdresseNormal(String strasse, int hausnummer, int plz, String ort, String land, Partner partner){
+    public AdresseNormal(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
     }
 
     
     /** veraltet, muss entfernt werden */
-    public AdresseNormal(String strasse, int hausnummer, int plz, String ort, String land){
+    public AdresseNormal(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
     }
     

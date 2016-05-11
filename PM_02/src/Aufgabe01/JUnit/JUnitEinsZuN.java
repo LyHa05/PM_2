@@ -30,9 +30,9 @@ public class JUnitEinsZuN {
 		this.p2 = new PartnerMulti("Baecker", "Gustav", 1979, 04, 23);
 		
 		/**Erzeugung Adress Obejekte*/
-		this.a1 = new AdresseNormal("Bruecke", 2, 11111, "Berghausen", "Dt");
-		this.a2 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
-		this.a3 = new AdresseNormal("Muelleimer", 5, 22222, "Wiesendorf", "Dt");
+		this.a1 = new AdresseNormal("Bruecke", 2, "11111", "Berghausen", "Dt");
+		this.a2 = new AdresseNormal("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
+		this.a3 = new AdresseNormal("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		
 		/** Weisen p1 Adressen a1 und a2 zu*/
 		p1.addAdresse(a1);

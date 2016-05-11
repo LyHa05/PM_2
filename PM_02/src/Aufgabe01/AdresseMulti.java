@@ -13,13 +13,13 @@ public class AdresseMulti extends Adresse {
     private HashSet<Partner> partnerSet;
 
     /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
-    public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land, HashSet<Partner> partnerSet){
+    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, HashSet<Partner> partnerSet){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerSet = partnerSet;
         partnerSet = new HashSet<Partner>();
     }
 
-    public AdresseMulti(String strasse, int hausnummer, int plz, String ort, String land){
+    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
         partnerSet = new HashSet<Partner>();
     }
