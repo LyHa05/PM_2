@@ -7,17 +7,17 @@ package Aufgabe01;
 Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), der ein Partner zugewiesen werden kann.
 */
 public class AdresseSingleMulti extends Adresse {
-    private Partner partner;
+    private PartnerSingleMulti partner;
 
     /** 3 Konstruktoren, um "1 zu *" Beziehung darstellen zu können und ein Erzeugen der Adresse ohne Partner zu verhindern.*/
-    public AdresseSingleMulti(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
+    public AdresseSingleMulti(String strasse, int hausnummer, String plz, String ort, String land, PartnerSingleMulti partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
     }
 
     public AdresseSingleMulti(String strasse, int hausnummer, String plz, String ort, String land, String name, String vorname, int jahr, int monat, int tag){
         super(strasse, hausnummer, plz, ort, land);
-        PartnerMulti p = new PartnerMulti(name, vorname, jahr, monat, tag);
+        PartnerSingleMulti p = new PartnerSingleMulti(name, vorname, jahr, monat, tag);
         this.setPartner(p);
     }
     
@@ -34,7 +34,7 @@ public class AdresseSingleMulti extends Adresse {
     }
 
 
-    public void setPartner(Partner partner) {
+    public void setPartner(PartnerSingleMulti partner) {
 		this.partner = partner;
 	}
 
