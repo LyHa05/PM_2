@@ -30,7 +30,7 @@ public class Queue<T> {
      *  Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
 
     public void enqueue(T element){
-        if(this.getAnzahlElemente() <= kapazitaet){
+        if(this.getAnzahlElemente() == kapazitaet){
             throw new QueueFullException("Die Queue ist voll.");
         } else {
             array[index_begin] = element;
@@ -42,7 +42,9 @@ public class Queue<T> {
         }
     }
 
-    /** Die Methode dequeue entfernt das letzt*/
+    /** Die Methode dequeue entfernt das letzte Element aus der Queue.
+     * Sollte die Queue leer sein wird eine 'EmptyQueueException' geworfen
+     * Wenn das Element */
 
     public T dequeue(){
         if(this.getAnzahlElemente() == 0){
