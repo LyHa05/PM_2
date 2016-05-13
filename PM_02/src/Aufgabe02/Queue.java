@@ -42,8 +42,10 @@ public class Queue<T> {
 
     /** Die Methode dequeue entfernt das letzte Element aus der Queue.
      * Sollte die Queue leer sein wird eine 'EmptyQueueException' geworfen
-     * Wenn das Element */
-
+     * Ansonsten wird das Element an der aktuellen Stelle
+     * des Indexes eingefuegt und der index_begin um 1 inkrementiert.
+     * Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
+    @SuppressWarnings("unchecked");
     public T dequeue(){
         if(this.getAnzahlElemente() == 0){
             throw new EmptyQueueException("Die Queue ist leer.");
@@ -54,6 +56,7 @@ public class Queue<T> {
             } else {
                 index_ende++;
             }
+
             return (T) array[temp_end];
         }
     }
