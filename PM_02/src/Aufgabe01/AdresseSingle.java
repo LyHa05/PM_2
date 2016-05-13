@@ -9,7 +9,7 @@ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnu
 public class AdresseSingle extends Adresse {
     private Partner partner;
 
-    /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
+    /** 3 Konstruktoren, um "1 zu 1" Beziehung darstellen zu können und zu verhindern, dass eine Adresse ohne Partner erstellt wird.*/
     public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
@@ -21,7 +21,6 @@ public class AdresseSingle extends Adresse {
         this.setPartner(p);
     }
     
-    /** veraltet, muss entfernt werden */
     public AdresseSingle(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
         throw new IllegalArgumentException("Adresse darf nicht ohne Partner erstellt werden!");

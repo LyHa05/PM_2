@@ -12,7 +12,7 @@ Diese Klasse  modelliert einen Partner mit allen Eigenschaften (Name, Vorname, G
 public class PartnerSingleMulti extends Partner {
     private HashSet<Adresse> adressenSet;
 
-    /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
+    /** 2 Konstruktoren, um "1 zu *" Beziehung darstellen zu können.*/
     public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag, HashSet<Adresse> adressenList) {
         super(name, vorname, jahr, monat, tag);
         this.adressenSet = adressenList;

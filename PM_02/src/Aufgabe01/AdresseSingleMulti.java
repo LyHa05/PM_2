@@ -9,7 +9,7 @@ Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnu
 public class AdresseSingleMulti extends Adresse {
     private Partner partner;
 
-    /** 2 Konstruktoren, um "1 zu 1" und "1 zu *" Beziehung darstellen zu können.*/
+    /** 3 Konstruktoren, um "1 zu *" Beziehung darstellen zu können und ein Erzeugen der Adresse ohne Partner zu verhindern.*/
     public AdresseSingleMulti(String strasse, int hausnummer, String plz, String ort, String land, Partner partner){
         super(strasse, hausnummer, plz, ort, land);
         this.partner = partner;
