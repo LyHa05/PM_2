@@ -18,6 +18,7 @@ public class AdresseSingleMulti extends Adresse {
     public AdresseSingleMulti(String strasse, int hausnummer, String plz, String ort, String land, String name, String vorname, int jahr, int monat, int tag){
         super(strasse, hausnummer, plz, ort, land);
         PartnerSingleMulti p = new PartnerSingleMulti(name, vorname, jahr, monat, tag);
+        p.addAdresse(this);
         this.setPartner(p);
     }
     
