@@ -12,19 +12,22 @@ public class Queue<T> {
     private Object[] array;
     private int index;
 
-    public Queue(T type, int kapazitaet){
+    public Queue(int kapazitaet){
         if(kapazitaet <= 0){
             throw new IllegalArgumentException("Die Kapazitaet muss > 0 sein.");
         }
         this.kapazitaet = kapazitaet;
         this.array = new Object[kapazitaet];
-        this.
+        this.index = 0;
     }
 
-    public void enqueue(Object element){
-        //if(== element.getClass() && array.length <= kapazitaet ){
-//
-  //      }
+    public void enqueue(T element){
+        if(index == kapazitaet-1){
+            throw new QueueFullException("Die Queue ist voll.");
+        } else {
+            array[index] = element;
+            index++;
+        }
     }
 
     public int getAnzahlElemente(){
