@@ -38,21 +38,6 @@ public class JUnitEinsZuN {
 		this.a4 = new AdresseSingleMulti("Sonstwo", 22, "23156", "Irgendwo", "De", "Hans", "Peter", 1997, 4, 12);
 		this.p3 = a4.getPartner();
 
-		//this.p1 = new PartnerSingleMulti("Meyer", "Ingo", 1999, 05, 12);
-		//this.p2 = new PartnerSingleMulti("Baecker", "Gustav", 1979, 04, 23);
-		
-		/**Erzeugung Adress Obejekte*/
-		//this.a1 = new AdresseSingleMulti("Bruecke", 2, "11111", "Berghausen", "Dt");
-		//this.a2 = new AdresseSingleMulti("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
-		//this.a3 = new AdresseSingleMulti("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
-		
-		/** Weisen p1 Adressen a1 und a2 zu*/
-		//p1.addAdresse(a1);
-		//p1.addAdresse(a2);
-		
-		/** Weisen a1 und a2 Partner p1  und p2 zu*/
-		//a1.setPartner(p1);
-		//a2.setPartner(p2);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -63,13 +48,13 @@ public class JUnitEinsZuN {
 	/**Adressenobjekt in Set von PartnerSingleMulti wiederauffindbar*/
 	@Test
 	public void test_Adresse_in_Set_von_PartnerSingleMulti() {
-		assertTrue(p1.getAdressenList().contains(a1));
+		assertTrue(p1.getAdressenSet().contains(a1));
 	}
 	
 	/**Adressenobjekt in Set von PartneSingleMulti wiederauffindbar*/
 	@Test
 	public void test_Adresse_in_Set_von_PartnerSingleMulti_2() {
-		assertTrue(p2.getAdressenList().contains(a2));
+		assertTrue(p2.getAdressenSet().contains(a2));
 	}
 	
 	/**Objektgleichheit bei gleichen Objekten*/
