@@ -42,7 +42,7 @@ public class Queue<T> {
         }
     }
 
-
+    /** Die Methode dequeue entfernt das letzt*/
 
     public T dequeue(){
         if(this.getAnzahlElemente() == 0){
