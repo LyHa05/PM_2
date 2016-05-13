@@ -8,10 +8,10 @@ Diese Klasse modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Ge
 */
 
 public class PartnerSingle extends Partner{
-    private Adresse adresse;
+    private AdresseSingle adresse;
 
     /** 3 Konstruktoren, um "1 zu 1" Beziehung darstellen zu können und um zu verhindern, dass ein Partner ohne Adresse erstellt werden kann.*/
-    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag, Adresse adresse){
+    public PartnerSingle(String name, String vorname, int jahr, int monat, int tag, AdresseSingle adresse){
         super(name, vorname, jahr, monat, tag);
         this.adresse = adresse;
     }
@@ -30,11 +30,11 @@ public class PartnerSingle extends Partner{
     }
 
     /** Get und Set Methoden*/
-    public Adresse getAdresse(){
+    public AdresseSingle getAdresse(){
         return adresse;
     }
 
-    public void setAdresse(Adresse adresse) {
+    public void setAdresse(AdresseSingle adresse) {
         this.adresse = adresse;
     }
 
