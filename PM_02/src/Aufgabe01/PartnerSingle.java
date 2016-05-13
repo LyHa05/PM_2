@@ -1,7 +1,5 @@
 package Aufgabe01;
 
-//test
-
 /**
 @author: Chris Thiele
 @author: Lydia Pflug
