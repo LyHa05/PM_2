@@ -10,34 +10,34 @@ import java.util.HashSet;
 Diese Klasse  modelliert einen Partner mit allen Eigenschaften (Name, Vorname, Geburtsdatum), dem mehrere Adressen zugewiesen werden können.
 */
 public class PartnerSingleMulti extends Partner {
-    private HashSet<Adresse> adressenSet;
+    private HashSet<AdresseSingleMulti> adressenSet;
 
     /** 2 Konstruktoren, um "1 zu *" Beziehung darstellen zu können.*/
-    public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag, HashSet<Adresse> adressenList) {
+    public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag, HashSet<AdresseSingleMulti> adressenSet) {
         super(name, vorname, jahr, monat, tag);
-        this.adressenSet = adressenList;
-        adressenList = new HashSet<Adresse>();
+        this.adressenSet = adressenSet;
+        adressenSet = new HashSet<AdresseSingleMulti>();
     }
 
     public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag){
         super(name, vorname, jahr, monat, tag);
-        adressenSet = new HashSet<Adresse>();
+        adressenSet = new HashSet<AdresseSingleMulti>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Adressen*/
-    public void addAdresse(Adresse adresse) {
+    public void addAdresse(AdresseSingleMulti adresse) {
         if (!(adressenSet.contains(adresse))) {
             adressenSet.add(adresse);
         }
     }
 
-    public void removeAdresse(Adresse adresse){
+    public void removeAdresse(AdresseSingleMulti adresse){
         if(adressenSet.contains(adresse)){
             adressenSet.remove(adresse);
         }
     }
 
-    public HashSet<Adresse> getAdressenList(){
+    public HashSet<AdresseSingleMulti> getAdressenList(){
         return adressenSet;
     }
 

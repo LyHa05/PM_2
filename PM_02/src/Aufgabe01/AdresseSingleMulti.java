@@ -29,7 +29,7 @@ public class AdresseSingleMulti extends Adresse {
     
 
     /** Get und Set Methoden*/
-    public Partner getPartner(){
+    public PartnerSingleMulti getPartner(){
         return partner;
     }
 

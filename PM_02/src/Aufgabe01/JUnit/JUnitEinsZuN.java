@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 import java.sql.Date;
 import org.junit.Before;
 import org.junit.Test;
-import Aufgabe01.AdresseSingle;
-import Aufgabe01.PartnerMulti;
+import Aufgabe01.AdresseSingleMulti;
+import Aufgabe01.PartnerSingleMulti;
 
 /**
 @author: Chris Thiele
@@ -16,55 +16,72 @@ Diese Klasse testet die 1:N Assoziation zwischen Partner und Adresse.
 
 public class JUnitEinsZuN {
 	
-	public PartnerMulti p1;
-	public PartnerMulti p2;
-	public AdresseSingle a1;
-	public AdresseSingle a2;
-	public AdresseSingle a3;
+	public PartnerSingleMulti p1;
+	public PartnerSingleMulti p2;
+	public PartnerSingleMulti p3;
+	public AdresseSingleMulti a1;
+	public AdresseSingleMulti a2;
+	public AdresseSingleMulti a3;
+	public AdresseSingleMulti a4;
 
 	@Before
 	public void setUp() {
-		
+
 		/**Erzeugung Personen Objekte*/
-		this.p1 = new PartnerMulti("Meyer", "Ingo", 1999, 05, 12);
-		this.p2 = new PartnerMulti("Baecker", "Gustav", 1979, 04, 23);
+
+		this.a1 = new AdresseSingleMulti("Holsteiner", 21, "22941", "Bargteheide", "De", "Hans", "Peter", 1998, 5, 11);
+		this.p1 = a1.getPartner();
+
+		this.a2 = new AdresseSingleMulti("Holsteiner", 21, "22941", "Bargteheide", "De", "Otto", "Maier", 1998, 5, 11);
+		this.p2 = a2.getPartner();
+
+		this.a4 = new AdresseSingleMulti("Sonstwo", 22, "23156", "Irgendwo", "De", "Hans", "Peter", 1997, 4, 12);
+		this.p3 = a4.getPartner();
+
+		//this.p1 = new PartnerSingleMulti("Meyer", "Ingo", 1999, 05, 12);
+		//this.p2 = new PartnerSingleMulti("Baecker", "Gustav", 1979, 04, 23);
 		
 		/**Erzeugung Adress Obejekte*/
-		this.a1 = new AdresseSingle("Bruecke", 2, "11111", "Berghausen", "Dt");
-		this.a2 = new AdresseSingle("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
-		this.a3 = new AdresseSingle("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
+		//this.a1 = new AdresseSingleMulti("Bruecke", 2, "11111", "Berghausen", "Dt");
+		//this.a2 = new AdresseSingleMulti("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
+		//this.a3 = new AdresseSingleMulti("Muelleimer", 5, "22222", "Wiesendorf", "Dt");
 		
 		/** Weisen p1 Adressen a1 und a2 zu*/
-		p1.addAdresse(a1);
-		p1.addAdresse(a2);
+		//p1.addAdresse(a1);
+		//p1.addAdresse(a2);
 		
 		/** Weisen a1 und a2 Partner p1  und p2 zu*/
-		a1.setPartner(p1);
-		a2.setPartner(p2);
+		//a1.setPartner(p1);
+		//a2.setPartner(p2);
 	}
 
-	/**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
+	@Test(expected = IllegalArgumentException.class)
+	public void test_AdresseSingle_ExceptionTrow() {
+		a3 = new AdresseSingleMulti("Working as", 12, "12345", "intended", "unso");
+	}
+
+	/**Adressenobjekt in Set von PartnerSingleMulti wiederauffindbar*/
 	@Test
-	public void test_Adresse_in_ArrayList_von_PartnerMulti() {
+	public void test_Adresse_in_Set_von_PartnerSingleMulti() {
 		assertTrue(p1.getAdressenList().contains(a1));
 	}
 	
-	/**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
+	/**Adressenobjekt in Set von PartneSingleMulti wiederauffindbar*/
 	@Test
-	public void test_Adresse_in_ArrayList_von_PartnerMulti_2() {
-		assertTrue(p1.getAdressenList().contains(a3));
+	public void test_Adresse_in_Set_von_PartnerSingleMulti_2() {
+		assertTrue(p2.getAdressenList().contains(a2));
 	}
 	
 	/**Objektgleichheit bei gleichen Objekten*/
 	@Test
 	public void test_Adressobjektgleichheit() {
-		assertEquals(a2,a3);
+		assertEquals(a1,a2);
 	}
 	
 	/**Objektidentität bei Adressobjekten*/
 	@Test
 	public void test_Adressobjektidentitaet() {
-		assertNotSame(a2,a3);
+		assertNotSame(a1,a4);
 	}
 	
 }
