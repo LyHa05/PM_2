@@ -8,14 +8,23 @@ package Aufgabe02;
  */
 
 public class Queue<T> {
-    private T type;
     private int kapazitaet;
     private Object[] array;
+    private int index;
 
     public Queue(T type, int kapazitaet){
-        this.type = type;
+        if(kapazitaet <= 0){
+            throw new IllegalArgumentException("Die Kapazitaet muss > 0 sein.");
+        }
         this.kapazitaet = kapazitaet;
         this.array = new Object[kapazitaet];
+        this.
+    }
+
+    public void enqueue(Object element){
+        //if(== element.getClass() && array.length <= kapazitaet ){
+//
+  //      }
     }
 
     public int getAnzahlElemente(){
