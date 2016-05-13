@@ -10,34 +10,34 @@ import java.util.HashSet;
 Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), die  mehreren Partner zugewiesen werden kann.
 */
 public class AdresseMulti extends Adresse {
-    private HashSet<Partner> partnerSet;
+    private HashSet<PartnerMulti> partnerSet;
 
-    /** 2 Konstruktoren, um "1 zu *" und "* zu *" Beziehung darstellen zu können.*/
-    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, HashSet<Partner> partnerSet){
+    /** 2 Konstruktoren, um "* zu *" Beziehung darstellen zu können.*/
+    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, HashSet<PartnerMulti> partnerSet){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerSet = partnerSet;
-        partnerSet = new HashSet<Partner>();
+        partnerSet = new HashSet<PartnerMulti>();
     }
 
     public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
-        partnerSet = new HashSet<Partner>();
+        partnerSet = new HashSet<PartnerMulti>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Partnern*/
-    public void addPartner(Partner partner){
+    public void addPartner(PartnerMulti partner){
         if(!(partnerSet.contains(partner))){
             partnerSet.add(partner);
         }
     }
 
-    public void removePartner(Partner partner){
+    public void removePartner(PartnerMulti partner){
         if(partnerSet.contains(partner)){
             partnerSet.remove(partner);
         }
     }
 
-    public HashSet<Partner> getPartnerSet(){
+    public HashSet<PartnerMulti> getPartnerSet(){
         return partnerSet;
     }
 
