@@ -21,13 +21,27 @@ public class Queue<T> {
         this.index = 0;
     }
 
+    /** Die Methode enqueue fuegt ein neues Element in die Queue ein.
+     *  Sollte die Queue voll sein, wird eine 'QueueFullException'
+     *  geworfen. Ansonsten wird das Element an der aktuellen Stelle
+     *  des Indexes eingefuegt und der index um 1 inkrementiert.
+     *  Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
+
     public void enqueue(T element){
-        if(index == kapazitaet-1){
+        if(this.getAnzahlElemente() >= kapazitaet){
             throw new QueueFullException("Die Queue ist voll.");
         } else {
             array[index] = element;
-            index++;
+            if(index == kapazitaet-1){
+                index = 0;
+            } else {
+                index++;
+            }
         }
+    }
+
+    public void dequeue(){
+
     }
 
     public int getAnzahlElemente(){
