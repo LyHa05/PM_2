@@ -64,7 +64,7 @@ public class JUnitNZuN {
     /**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
     @Test
     public void test_Adresse_in_ArrayList_von_PartnerMulti() {
-        assertTrue(p1.getAdressenList().contains(a1));
+        assertTrue(p1.getAdressenSet().contains(a1));
     }
 
     /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/
@@ -76,7 +76,7 @@ public class JUnitNZuN {
     /**Adressenobjekt in ArrayList von Partnermulti wiederauffindbar*/
     @Test
     public void test_Adresse_in_ArrayList_von_PartnerMulti_2() {
-        assertTrue(p1.getAdressenList().contains(a3));
+        assertTrue(p1.getAdressenSet().contains(a3));
     }
 
     /** Partnerobjekt in ArrayList von AdresseMulti wiederauffindbar*/

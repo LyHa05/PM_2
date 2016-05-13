@@ -37,7 +37,7 @@ public class PartnerMulti extends Partner {
         }
     }
 
-    public HashSet<AdresseMulti> getAdressenList(){
+    public HashSet<AdresseMulti> getAdressenSet(){
         return adressenSet;
     }
 
