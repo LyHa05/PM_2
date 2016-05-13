@@ -8,7 +8,6 @@ package Aufgabe02;
  */
 
 public class Queue<T> {
-    private int kapazitaet;
     private Object[] array;
     private int index_begin;
     private int index_ende;
@@ -17,7 +16,6 @@ public class Queue<T> {
         if(kapazitaet <= 0){
             throw new IllegalArgumentException("Die Kapazitaet muss > 0 sein.");
         }
-        this.kapazitaet = kapazitaet;
         this.array = new Object[kapazitaet];
         this.index_begin = 0;
         this.index_ende = 0;
@@ -30,11 +28,11 @@ public class Queue<T> {
      *  Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
 
     public void enqueue(T element){
-        if(this.getAnzahlElemente() == kapazitaet){
+        if(this.getAnzahlElemente() == array.length){
             throw new QueueFullException("Die Queue ist voll.");
         } else {
             array[index_begin] = element;
-            if(index_begin == kapazitaet-1){
+            if(index_begin == array.length-1){
                 index_begin = 0;
             } else {
                 index_begin++;
@@ -51,7 +49,7 @@ public class Queue<T> {
             throw new EmptyQueueException("Die Queue ist leer.");
         } else {
             int temp_end = index_ende;
-            if(index_ende == kapazitaet-1){
+            if(index_ende == array.length-1){
                 index_ende = 0;
             } else {
                 index_ende++;
@@ -61,15 +59,23 @@ public class Queue<T> {
     }
 
     public int getAnzahlElemente(){
-        return array.length;
+        int elemente = 0;
+
+        for(int i = 0; i <= array.length; i++){
+            if(array[i] != null){
+               elemente++;
+            }
+        }
+
+        return elemente;
     }
 
     public int getKapazitaet(){
-        return kapazitaet;
+        return array.length;
     }
 
     public boolean empty(){
-        if(array.length == 0) {
+        if(this.getAnzahlElemente() == 0) {
             return true;
         } else {
             return false;
