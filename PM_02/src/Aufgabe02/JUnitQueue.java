@@ -60,21 +60,12 @@ public class JUnitQueue {
 	public void testElementeAusLeeremQueueEntnehmen() {
 		this.q2.dequeue();
 	}
-	
-	
-	
-	
-	
-	/** bei getter Methode prüfen, ob Objekt veränderbar */
-	@Test
-	public void testRueckgabewertGetterMethode() {
-		assertNotSame(q1.getKapazitaet(),q1.getKapazitaet() + 2);
-	}
 
 	/** prüfen, ob toString überschrieben */
 	@Test
 	public void testImplementierungToString() {
-		assertNotSame(System.out.println(q1),/**regulärer toString ausdruckt*/);
+		
 	}
+
 
 }
