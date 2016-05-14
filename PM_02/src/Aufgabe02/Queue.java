@@ -52,17 +52,21 @@ public class Queue<T> {
      * Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
     @SuppressWarnings("unchecked")
 	public T dequeue(){
+        T temp_element;
+
         if(this.getAnzahlElemente() == 0){
             throw new NoSuchElementException("Die Queue ist leer.");
         } else {
-            int temp_end = index_ende;
+
+            temp_element = (T) array[index_end];
+
             if(index_ende == array.length-1){
                 index_ende = 0;
             } else {
                 index_ende++;
             }
 
-            return (T) array[temp_end];
+            return temp_element;
         }
     }
 
