@@ -58,8 +58,8 @@ public class Queue<T> {
             throw new NoSuchElementException("Die Queue ist leer.");
         } else {
 
-            temp_element = (T) array[index_end];
-            array[index_end] = null;
+            temp_element = (T) array[index_ende];
+            array[index_ende] = null;
             
             if(index_ende == array.length-1){
                 index_ende = 0;
@@ -106,18 +106,18 @@ public class Queue<T> {
 
     /** Die Methode 'toString' liefert eine Darstellung der Elemente als
         String zurueck, sofern dies moeglich ist. */
-}
     public String toString(){
-        String temp_string;
+        String temp_string = "";
 
         if(empty()){
             return "";
         } else {
             for(int i = 0; i < array.length; i++){
                 if(array[i] != null){
-                    temp_string = temp_string + " " + array[i].toString
+                    temp_string = temp_string + " " + array[i].toString();
                 }
             }
         }
+        return temp_string;
     }
 }
