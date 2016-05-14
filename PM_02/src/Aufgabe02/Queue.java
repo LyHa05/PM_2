@@ -59,7 +59,8 @@ public class Queue<T> {
         } else {
 
             temp_element = (T) array[index_end];
-
+            array[index_end] = null;
+            
             if(index_ende == array.length-1){
                 index_ende = 0;
             } else {
