@@ -2,6 +2,8 @@ package Aufgabe02;
 
 import static org.junit.Assert.*;
 
+import java.util.NoSuchElementException;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,7 +22,7 @@ public class JUnitQueue {
 	/** erstelltes Array geprüft*/
 	@Test
 	public void testErstelltesArray() {
-		assertTrue(this.q1.empty);
+		assertTrue(this.q1.empty());
 	}
 	
 	/** Methode anzahlElemente testen**/
@@ -39,7 +41,7 @@ public class JUnitQueue {
 	}
 
 	/** mehr Elemente als möglich Kapazität in Array einfügen*/
-	@Test(expected = QueueFullException.class)
+	@Test(expected = IllegalStateException.class)
 	public void testMehrElementeAlsKapazitaet() {
 		this.q1.enqueue(1);
 		this.q1.enqueue(2);
@@ -47,7 +49,7 @@ public class JUnitQueue {
 	}
 
 	/** Element aus leerem Queue entnehmen*/
-	@Test(expected = EmptyQueueException.class)
+	@Test(expected = NoSuchElementException.class)
 	public void testElementeAusLeeremQueueEntnehmen() {
 		this.q2.dequeue();
 	}
