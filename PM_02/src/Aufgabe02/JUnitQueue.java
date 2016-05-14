@@ -11,7 +11,7 @@ import org.junit.Test;
  @author: Chris Thiele
  @author: Lydia Pflug
  @date: 12.05.2016
- Diese Klasse stellt eine
+ Diese Klasse testet die Funktionalitaet der Klasse Queue. 
  */
 
 public class JUnitQueue {
@@ -60,6 +60,10 @@ public class JUnitQueue {
 	public void testElementeAusLeeremQueueEntnehmen() {
 		this.q2.dequeue();
 	}
+	
+	
+	
+	
 	
 	/** bei getter Methode prüfen, ob Objekt veränderbar */
 	@Test

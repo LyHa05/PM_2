@@ -66,9 +66,8 @@ public class Queue<T> {
     public int getAnzahlElemente(){
         int elemente = 0;
 
-        for(int i = 0; i <= array.length; i++){
+        for(int i = 0; i < array.length; i++){
             if(array[i] != null){
-                System.out.println(elemente);
                elemente++;
             }
         }
