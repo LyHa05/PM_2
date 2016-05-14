@@ -7,6 +7,8 @@ package Aufgabe02;
  Diese Klasse stellt eine
  */
 
+import java.util.NoSuchElementException;
+
 public class Queue<T> {
     private Object[] array;
     private int index_begin;
@@ -29,7 +31,7 @@ public class Queue<T> {
 
     public void enqueue(T element){
         if(this.getAnzahlElemente() == array.length){
-            throw new QueueFullException("Die Queue ist voll.");
+            throw new IllegalStateException("Die Queue ist voll.");
         } else {
             array[index_begin] = element;
             if(index_begin == array.length-1){
@@ -48,7 +50,7 @@ public class Queue<T> {
     @SuppressWarnings("unchecked")
 	public T dequeue(){
         if(this.getAnzahlElemente() == 0){
-            throw new EmptyQueueException("Die Queue ist leer.");
+            throw new NoSuchElementException("Die Queue ist leer.");
         } else {
             int temp_end = index_ende;
             if(index_ende == array.length-1){
