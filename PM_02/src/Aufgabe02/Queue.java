@@ -45,8 +45,8 @@ public class Queue<T> {
      * Ansonsten wird das Element an der aktuellen Stelle
      * des Indexes eingefuegt und der index_begin um 1 inkrementiert.
      * Sind Index und Kapazitaet gleich, wird der Index auf 1 gesetzt.*/
-    @SuppressWarnings("unchecked");
-    public T dequeue(){
+    @SuppressWarnings("unchecked")
+	public T dequeue(){
         if(this.getAnzahlElemente() == 0){
             throw new EmptyQueueException("Die Queue ist leer.");
         } else {
