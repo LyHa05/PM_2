@@ -98,4 +98,21 @@ public class Queue<T> {
             return false;
         }
     }
+
+    /** Die Methode 'toString' liefert eine Darstellung der Elemente als
+        String zurueck, sofern dies moeglich ist. */
+}
+    public String toString(){
+        String temp_string;
+
+        if(empty()){
+            return "";
+        } else {
+            for(int i = 0; i < array.length; i++){
+                if(array[i] != null){
+                    temp_string = temp_string + " " + array[i].toString
+                }
+            }
+        }
+    }
 }
