@@ -7,6 +7,13 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ @author: Chris Thiele
+ @author: Lydia Pflug
+ @date: 12.05.2016
+ Diese Klasse stellt eine
+ */
+
 public class JUnitQueue {
 
 	public Queue<Integer> q1;
