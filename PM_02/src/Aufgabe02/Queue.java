@@ -1,10 +1,10 @@
 package Aufgabe02;
 
-/**
- @author: Chris Thiele
- @author: Lydia Pflug
- @date: 12.05.2016
- Diese Klasse stellt eine
+/** @author: Chris Thiele
+    @author: Lydia Pflug
+    @date: 12.05.2016#
+    Die Klasse 'Queue<T>' repraesentiert einen generischen Ringpuffer, welcher mit
+    einem Array als interne Datenstruktur realisiert wird.
  */
 
 import java.util.NoSuchElementException;
@@ -14,6 +14,9 @@ public class Queue<T> {
     private int index_begin;
     private int index_ende;
 
+    /** Der Konstruktor bekommt als Parameter einen Integer uebergeben, welcher > 0 sein
+        muss, da dieser die Kapazitaet des Arrays repraesentiert.
+    */
     public Queue(int kapazitaet){
         if(kapazitaet <= 0){
             throw new IllegalArgumentException("Die Kapazitaet muss > 0 sein.");
@@ -63,6 +66,10 @@ public class Queue<T> {
         }
     }
 
+    /** Die Methode 'getAnzahlElemente' iteriert ueber die interne 
+    *   Array Datenstruktur und zaehlt die Elemente welche != null
+    *   sind. Am Ende wird diese Anzahl zurueck gegeben.*/
+
     public int getAnzahlElemente(){
         int elemente = 0;
 
@@ -75,10 +82,15 @@ public class Queue<T> {
         return elemente;
     }
 
+    /** Die Methode 'getKapazitaet' gibt die Kapazitaet der internen
+    *   Array Datenstruktur zurueck. Hierbei wird die Konstante
+        .length vom Array zurueck gegeben*/
     public int getKapazitaet(){
         return array.length;
     }
 
+    /** Die Methode 'empty' liefert ein Boolean zurueck, ob der Array
+        leer ist oder nicht */
     public boolean empty(){
         if(this.getAnzahlElemente() == 0) {
             return true;
