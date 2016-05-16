@@ -5,9 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Aufgabe01.AdresseMulti;
 import Aufgabe01.AdresseSingle;
-import Aufgabe01.ObjektErzeuger;
 import Aufgabe01.PartnerSingle;
 
 /**
