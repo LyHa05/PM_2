@@ -1,6 +1,7 @@
 package Aufgabe01;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -17,12 +18,12 @@ public class AdresseMulti extends Adresse {
     public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, Set<PartnerMulti> partnerSet){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerSet = partnerSet;
-        partnerSet = new Set<PartnerMulti>();
+        partnerSet = new HashSet<PartnerMulti>();
     }
 
     public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
-        partnerSet = new Set<PartnerMulti>();
+        partnerSet = new HashSet<PartnerMulti>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Partnern*/
@@ -39,7 +40,7 @@ public class AdresseMulti extends Adresse {
     }
 
     public Set<PartnerMulti> getPartnerSet(){
-        return (Set<PartnerMulti>) Collections.unmodifiableSet(partnerSet);
+        return Collections.unmodifiableSet(partnerSet);
     }
 
 	@Override

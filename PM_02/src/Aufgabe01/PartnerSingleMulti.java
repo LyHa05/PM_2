@@ -18,12 +18,12 @@ public class PartnerSingleMulti extends Partner {
     public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag, Set<AdresseSingleMulti> adressenSet) {
         super(name, vorname, jahr, monat, tag);
         this.adressenSet = adressenSet;
-        adressenSet = new Set<AdresseSingleMulti>();
+        adressenSet = new HashSet<AdresseSingleMulti>();
     }
 
     public PartnerSingleMulti(String name, String vorname, int jahr, int monat, int tag){
         super(name, vorname, jahr, monat, tag);
-        adressenSet = new Set<AdresseSingleMulti>();
+        adressenSet = new HashSet<AdresseSingleMulti>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Adressen*/
@@ -39,7 +39,7 @@ public class PartnerSingleMulti extends Partner {
         }
     }
 
-    public HashSet<AdresseSingleMulti> getAdressenSet(){
+    public Set<AdresseSingleMulti> getAdressenSet(){
     	return Collections.unmodifiableSet(adressenSet);
     }
 
