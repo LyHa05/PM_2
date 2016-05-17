@@ -33,9 +33,14 @@ public class AdresseSingle extends Adresse {
     }
 
 
-    public void setPartner(PartnerSingle partner) {
+    protected void setPartner(PartnerSingle partner) {
 		this.partner = partner;
 	}
+    
+    public void changePartner(String name, String vorname, int jahr, int monat, int tag) {
+    	PartnerSingle p = new PartnerSingle(name, vorname, jahr, monat, tag, this);
+        this.setPartner(p);
+ 	}
 
 	@Override
 	public String toString() {

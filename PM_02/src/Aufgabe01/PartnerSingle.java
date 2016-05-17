@@ -34,10 +34,15 @@ public class PartnerSingle extends Partner{
         return adresse;
     }
 
-    public void setAdresse(AdresseSingle adresse) {
+    protected void setAdresse(AdresseSingle adresse) {
         this.adresse = adresse;
     }
 
+    public void changeAdresse(String strasse, int hausnummer, String plz, String ort, String land) {
+    	 AdresseSingle a = new AdresseSingle(strasse, hausnummer, plz, ort, land, this);
+         this.setAdresse(a);
+    }  
+    
 	@Override
 	public String toString() {
 		return super.toString() + this.adresse.toString();

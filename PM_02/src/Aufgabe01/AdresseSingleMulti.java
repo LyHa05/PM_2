@@ -35,8 +35,14 @@ public class AdresseSingleMulti extends Adresse {
     }
 
 
-    public void setPartner(PartnerSingleMulti partner) {
+    protected void setPartner(PartnerSingleMulti partner) {
 		this.partner = partner;
+	}
+    
+    public void changePartner(String name, String vorname, int jahr, int monat, int tag) {
+    	PartnerSingleMulti p = new PartnerSingleMulti(name, vorname, jahr, monat, tag);
+        p.addAdresse(this);
+        this.setPartner(p);
 	}
 
 	@Override
