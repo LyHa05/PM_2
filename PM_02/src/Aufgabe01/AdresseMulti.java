@@ -1,7 +1,7 @@
 package Aufgabe01;
 
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -11,18 +11,18 @@ import java.util.HashSet;
 Diese Klasse modelliert eine Adresse mit allen Eigenschaften (Strasse mit Hausnummer, PLZ Ort und Land), die  mehreren Partner zugewiesen werden kann.
 */
 public class AdresseMulti extends Adresse {
-    private HashSet<PartnerMulti> partnerSet;
+    private Set<PartnerMulti> partnerSet;
 
     /** 2 Konstruktoren, um "* zu *" Beziehung darstellen zu können.*/
-    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, HashSet<PartnerMulti> partnerSet){
+    public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land, Set<PartnerMulti> partnerSet){
         super(strasse, hausnummer, plz, ort, land);
         this.partnerSet = partnerSet;
-        partnerSet = new HashSet<PartnerMulti>();
+        partnerSet = new Set<PartnerMulti>();
     }
 
     public AdresseMulti(String strasse, int hausnummer, String plz, String ort, String land){
         super(strasse, hausnummer, plz, ort, land);
-        partnerSet = new HashSet<PartnerMulti>();
+        partnerSet = new Set<PartnerMulti>();
     }
 
     /** Get und Set Methoden bzw. Entfernen und Hinzufügen von Partnern*/
@@ -38,8 +38,8 @@ public class AdresseMulti extends Adresse {
         }
     }
 
-    public HashSet<PartnerMulti> getPartnerSet(){
-        return (HashSet<PartnerMulti>) Collections.unmodifiableSet(partnerSet);
+    public Set<PartnerMulti> getPartnerSet(){
+        return (Set<PartnerMulti>) Collections.unmodifiableSet(partnerSet);
     }
 
 	@Override
