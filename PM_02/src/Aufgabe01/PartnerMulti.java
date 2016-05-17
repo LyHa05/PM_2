@@ -1,5 +1,6 @@
 package Aufgabe01;
 
+import java.util.Collections;
 import java.util.HashSet;
 
 
@@ -38,7 +39,7 @@ public class PartnerMulti extends Partner {
     }
 
     public HashSet<AdresseMulti> getAdressenSet(){
-        return adressenSet;
+        return (HashSet<AdresseMulti>) Collections.unmodifiableSet(adressenSet);
     }
 
 	@Override
