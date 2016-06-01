@@ -41,6 +41,7 @@ public class TestPredicateUtilty {
     @Test
     public void testPredicate(){
         System.out.println("testPredicate");
+        System.out.println("-------------------------");
         try {
             Files.lines(Paths.get("src/Aufgabe042/scrabble.txt")).filter(s -> s != null)
                     .filter(doppelBuchstabeSN).forEach(System.out::println);
@@ -53,6 +54,7 @@ public class TestPredicateUtilty {
     @Test
     public void testPredicateDieZweite(){
         System.out.println("testPredicateDieZweite");
+        System.out.println("-------------------------");
         try {
             Files.lines(Paths.get("src/Aufgabe042/scrabble.txt")).filter(s -> s != null)
                     .filter(ganzKomisch).forEach(System.out::println);
@@ -65,6 +67,7 @@ public class TestPredicateUtilty {
     @Test
     public void testDoppelVocale(){
         System.out.println("testDoppelVocale");
+        System.out.println("-------------------------");
         try {
             Files.lines(Paths.get("src/Aufgabe042/scrabble.txt")).filter(s -> s != null)
                     .filter(doppelVocale).forEach(System.out::println);
@@ -76,6 +79,7 @@ public class TestPredicateUtilty {
 
     @Test
     public void Palindrome(){
+        System.out.println("Palindrome");
         System.out.println("-------------------------");
         try {
             Files.lines(Paths.get("src/Aufgabe042/scrabble.txt")).filter(s -> s != null)
@@ -90,6 +94,7 @@ public class TestPredicateUtilty {
     @Test
     public void anStelle2Und4Und6E(){
         System.out.println("anStelle2Und4Und6E");
+        System.out.println("-------------------------");
         try {
             Files.lines(Paths.get("src/Aufgabe042/scrabble.txt")).filter(s -> s != null)
                     .filter(eAnStelleX).forEach(System.out::println);
