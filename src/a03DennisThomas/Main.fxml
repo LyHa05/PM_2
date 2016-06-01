@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="a03.MainController">
+   <children>
+      <GridPane layoutX="38.0" layoutY="71.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <TableView fx:id="tabelle" prefHeight="320.0" prefWidth="300.0">
+                    <columns>
+                      <TableColumn fx:id="stationSpalte" prefWidth="85.0" text="Station" />
+                      <TableColumn fx:id="ankunftSpalte" prefWidth="105.0" text="Ankunft" />
+                        <TableColumn fx:id="abfahrtSpalte" prefWidth="109.0" text="Abfahrt" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="stationNeuBtn" layoutX="158.0" layoutY="337.0" mnemonicParsing="false" text="Neue Station" />
+                  <TextField fx:id="ort" layoutX="107.0" layoutY="56.0" prefHeight="39.0" prefWidth="182.0" />
+                  <Label layoutX="29.0" layoutY="62.0" text="Ort" />
+                  <DatePicker fx:id="ankunftsDatum" layoutX="27.0" layoutY="161.0" />
+                  <Label layoutX="28.0" layoutY="122.0" text="Ankunft" />
+                  <Label layoutX="30.0" layoutY="233.0" text="Abreise" />
+                  <DatePicker fx:id="abreiseDatum" layoutX="27.0" layoutY="278.0" />
+                  <TextField fx:id="abreiseZeit" layoutX="107.0" layoutY="227.0" prefHeight="39.0" prefWidth="182.0" />
+                  <TextField fx:id="ankunftsZeit" layoutX="107.0" layoutY="116.0" prefHeight="39.0" prefWidth="182.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
