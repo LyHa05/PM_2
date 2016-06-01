@@ -2,6 +2,12 @@ package Aufgabe042;
 
 import java.util.function.Predicate;
 
+/**
+ * @author: Chris Thiele
+ * @author: Lydia Pflug
+ * @date: 01.07.2016 Diese Klasse verknuepft Predicates
+ */
+
 public class PredicateUtilty {
 
 	private PredicateUtilty(){}

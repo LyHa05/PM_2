@@ -9,8 +9,11 @@ import java.nio.file.Paths;
 import java.util.function.Predicate;
 
 /**
- * Created by chris on 01.06.16.
+ * @author: Chris Thiele
+ * @author: Lydia Pflug
+ * @date: 01.07.2016 Diese Klasse testet die PredicateUtilty Klasse
  */
+
 public class TestPredicateUtilty {
     public Predicate<String> doppelBuchstabeSN, ganzKomisch, doppelVocale, eAnStelleX, palindromeMitSechsBuchsten;
 
