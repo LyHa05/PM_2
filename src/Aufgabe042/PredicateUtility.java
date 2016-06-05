@@ -5,12 +5,13 @@ import java.util.function.Predicate;
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
- * @date: 01.07.2016 Diese Klasse verknuepft Predicates
+ * @date: 01.07.2016
+ * Diese Klasse verknuepft Predicates in einer Utility.
  */
 
-public class PredicateUtilty {
+public class PredicateUtility {
 
-	private PredicateUtilty(){}
+	private PredicateUtility(){}
 
 	@SafeVarargs
 	public static <T> Predicate<T> andAll(Predicate<T>... predicates ) {

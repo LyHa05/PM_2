@@ -19,23 +19,23 @@ public class TestPredicateUtilty {
 
     @Before
     public void setUp(){
-        doppelBuchstabeSN = PredicateUtilty.andAll(s -> s.contains("ss"),
+        doppelBuchstabeSN = PredicateUtility.andAll(s -> s.contains("ss"),
                 s -> s.contains("nn"));
 
-        ganzKomisch = PredicateUtilty.andAll(s -> s.startsWith("x"), s -> s.contains("wk"));
+        ganzKomisch = PredicateUtility.andAll(s -> s.startsWith("x"), s -> s.contains("wk"));
 
-        doppelVocale = PredicateUtilty.orAny(s -> s.contains("aa"),
+        doppelVocale = PredicateUtility.orAny(s -> s.contains("aa"),
                 s -> s.contains("ee"),
                 s -> s.contains("ii"),
                 s -> s.contains("oo"),
                 s -> s.contains("uu"));
 
-        eAnStelleX = PredicateUtilty.andAll(s -> s.length() >= 6,
+        eAnStelleX = PredicateUtility.andAll(s -> s.length() >= 6,
                 s -> s.charAt(1) == 'e',
                 s -> s.charAt(3) == 'e',
                 s -> s.charAt(5) == 'e');
 
-        palindromeMitSechsBuchsten = PredicateUtilty.andAll(s -> s.length() == 6,
+        palindromeMitSechsBuchsten = PredicateUtility.andAll(s -> s.length() == 6,
                 s -> s.charAt(0) == s.charAt(5),
                 s -> s.charAt(1) == s.charAt(4),
                 s -> s.charAt(2) == s.charAt(3));
