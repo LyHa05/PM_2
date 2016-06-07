@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 public class FibonacciStream implements Supplier<Long> {
     private long vorgaenger = 0;
-    private long nachfolger = 0;
+    private long nachfolger = 1;
 
 
     @Override
