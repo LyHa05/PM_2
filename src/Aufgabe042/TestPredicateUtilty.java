@@ -15,7 +15,11 @@ import java.util.function.Predicate;
  */
 
 public class TestPredicateUtilty {
-    public Predicate<String> doppelBuchstabeSN, ganzKomisch, doppelVocale, eAnStelleX, palindromeMitSechsBuchsten;
+    public Predicate<String> doppelBuchstabeSN;
+    public Predicate<String> ganzKomisch;
+    public Predicate<String> doppelVocale;
+    public Predicate<String> eAnStelleX;
+    public Predicate<String> palindromeMitSechsBuchsten;
 
     @Before
     public void setUp(){

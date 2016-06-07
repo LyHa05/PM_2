@@ -10,8 +10,7 @@ package Aufgabe041;
 public class MeineUtility {
 
 	public static <T> T betterElement(T element1, T element2, MeinInterface<T> f ) {
-		if(f.vergleichenVonZweiEige
-				nschaften(element1, element2) == true) {
+		if(f.vergleichenVonZweiEigenschaften(element1, element2) == true) {
 			return element1;
 		} else {
 			return element2;
