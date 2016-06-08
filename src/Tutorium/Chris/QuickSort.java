@@ -34,5 +34,7 @@ public class QuickSort {
             //Map weiter sortieren jk
             //check ob sortiert oder nicht, Boolean sortiert = true, sortierenWeiter aufrufen mit Map und Boolean
         }
+        return new List<Integer>() {
+        }
     }
 }
