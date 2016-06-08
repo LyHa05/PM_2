@@ -18,7 +18,7 @@ public class TestFibonacciStream {
     * public ArrayList<Long> ArrayMit10StellenFibo;
      */
 
-    public Stream<Long> StreamMit25StellenFibo = FibonacciStream.erstellenFiboStream(250);
+    public Stream<Long> StreamMit25StellenFibo = FibonacciStream.erstellenFiboStream(25);
     public Stream<Long> StreamMit10StellenFiob = FibonacciStream.erstellenFiboStream(10);
 
     @Before
@@ -28,6 +28,13 @@ public class TestFibonacciStream {
     @Test
     public void TestMit25FibonacciZahlen() {
         System.out.println("Ausgabe Fibonacci Zahlen 25 Stellen");
+        System.out.println("-----------------------------------");
+        StreamMit25StellenFibo.filter(s -> s != null).forEach(System.out::println);
+    }
+
+    @Test
+    public void TestMit10FibonacciZahlen() {
+        System.out.println("Ausgabe Fibonacci Zahlen 10 Stellen");
         System.out.println("-----------------------------------");
         StreamMit25StellenFibo.filter(s -> s != null).forEach(System.out::println);
     }
