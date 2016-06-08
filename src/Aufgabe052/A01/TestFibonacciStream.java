@@ -3,6 +3,8 @@ package Aufgabe052.A01;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -71,14 +73,14 @@ public class TestFibonacciStream {
     }
 
     @Test
-    public void TestMit25FibonacciZahlen() {
+    public void testMit25FibonacciZahlen() {
         StreamMit25StellenFibo.filter(l -> l != null).collect(Collectors.toCollection(() -> TestMit25));
         assertEquals(true, (TestMit25.equals(LoesungMit25)));
     }
 
     @Test
-    public void TestMit10FibonacciZahlen() {
+    public void testMit10FibonacciZahlen() {
         StreamMit25StellenFibo.filter(l -> l != null).collect(Collectors.toCollection(() -> TestMit10));
-        assertEquals(true, (TestMit10.equals(LoesungMit10));
+        assertEquals(true, (TestMit10.equals(LoesungMit10)));
     }
 }
