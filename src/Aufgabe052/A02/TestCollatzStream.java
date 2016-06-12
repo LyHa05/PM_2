@@ -18,10 +18,10 @@ import static org.junit.Assert.assertEquals;
  */
 
 public class TestCollatzStream {
-    public Stream<Integer> collatzTestStream1 = CollatzStream.erstellenCollatzStream(1);
+    /** public Stream<Integer> collatzTestStream1 = CollatzStream.erstellenCollatzStream(1);
     public Stream<Integer> collatzTestStream5 = CollatzStream.erstellenCollatzStream(5);
     public Stream<Integer> collatzTestStream10 = CollatzStream.erstellenCollatzStream(10);
-    public Stream<Integer> collatzTestStream20 = CollatzStream.erstellenCollatzStream(20);
+    public Stream<Integer> collatzTestStream20 = CollatzStream.erstellenCollatzStream(20); */
     public List<Integer> testMitstartwert1 = new ArrayList<>();
     public List<Integer> testMitStartwert5 = new ArrayList<>();
     public List<Integer> testMitStartwert10 = new ArrayList<>();
@@ -43,24 +43,28 @@ public class TestCollatzStream {
 
     @Test
     public void testEndWertMitStartWert1() {
+        Stream<Integer> collatzTestStream1 = CollatzStream.erstellenCollatzStream(1);
         collatzTestStream1.filter(l -> l != null).collect(Collectors.toCollection(() -> testMitstartwert1));
         assertEquals(endWertBeiStartwert1, testMitstartwert1.get(19));
     }
 
     @Test
     public void testEndWertMitStartWert5() {
+        Stream<Integer> collatzTestStream5 = CollatzStream.erstellenCollatzStream(5);
         collatzTestStream5.filter(l -> l != null).collect(Collectors.toCollection(() -> testMitStartwert5));
         assertEquals(true, endWertBeiStartwert5.equals(testMitStartwert5.get(19)));
     }
 
     @Test
     public void testEndWertMitStartWert10() {
+        Stream<Integer> collatzTestStream10 = CollatzStream.erstellenCollatzStream(10);
         collatzTestStream10.filter(l -> l != null).collect(Collectors.toCollection(() -> testMitStartwert10));
         assertEquals(true, endWertBeiStartwert10.equals(testMitStartwert10.get(19)));
     }
 
     @Test
     public void testEndWertMitStartWert20() {
+        Stream<Integer> collatzTestStream20 = CollatzStream.erstellenCollatzStream(20);
         collatzTestStream20.filter(l -> l != null).collect(Collectors.toCollection(() -> testMitStartwert20));
         assertEquals(true, endWertBeiStartwert20.equals(testMitStartwert20.get(19)));
     }
