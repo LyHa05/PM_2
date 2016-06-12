@@ -1,7 +1,6 @@
 package Aufgabe051;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 /**
@@ -22,11 +21,12 @@ public class TestDateiLesen {
 		assertEquals(false,DateiLesen.dateiEinlesen().get(1).contains("13:16"));	
 	}
 	
-	/**Methode*/
+	/**Methode prueft Anzahl der gezaehlten Worte.*/
 	@Test
 	public void testAnzahlWorte() {
-		
-		
+		assertSame(1,DateiLesen.woerterZaehlen(DateiLesen.dateiEinlesen()).get("gesundheit"));
+		assertSame(1,DateiLesen.woerterZaehlen(DateiLesen.dateiEinlesen()).get("alsbald"));
+		assertSame(4,DateiLesen.woerterZaehlen(DateiLesen.dateiEinlesen()).get("wasser"));
 	}
 
 }
