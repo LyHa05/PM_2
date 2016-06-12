@@ -15,8 +15,8 @@ import java.util.stream.Stream;
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
- * @date: 01.07.2016
- * Diese Klasse verknuepft Predicates in einer Utility.
+ * @date: 12.06.2016
+ * Diese Klasse liest eine Datei ein und filtert und zaehlt dann die enthaltenen Worte.
  */
 public class DateiLesen {
 
@@ -37,19 +37,18 @@ public class DateiLesen {
 			e.printStackTrace();
 		}
 		
-		
 		return stringListe;
 
 	}
 	
-	public static Map<Object, Integer> woerterZaehlen(List<String> gefilterteVerse) {
-		Stream<String> woerter = Stream.of(gefilterteVerse.toString());
-		
-		Map<Object, Integer> gezaehlteWoerter =woerter.map(w -> w.split(" "))
-//													.map(word -> word.replaceAll("[^,.!?;]", ""))
+	public static Map<String, Integer> woerterZaehlen(List<String> gefilterteVerse) {
+		Stream<String> woerter = Stream.of(gefilterteVerse.toString().replaceAll("[;*\\.*\\,*\\?*\\!*\\:*\\d+]", ""));
+			
+		Map<String, Integer> gezaehlteWoerter =woerter.map(w -> w.split(" "))
 		                                   			.flatMap(Arrays::stream)
 		                                   			.collect(Collectors.groupingBy(String::toLowerCase, Collectors.summingInt(s -> 1)));
-	
+
+		
 		return gezaehlteWoerter;
 	}
 
