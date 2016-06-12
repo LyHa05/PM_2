@@ -5,9 +5,12 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author: Chris Thiele
@@ -34,13 +37,29 @@ public class DateiLesen {
 			e.printStackTrace();
 		}
 		
+		
 		return stringListe;
 
 	}
+	
+	public static Map<Object, Integer> woerterZaehlen(List<String> gefilterteVerse) {
+		Stream<String> woerter = Stream.of(gefilterteVerse.toString());
+		
+		Map<Object, Integer> gezaehlteWoerter =woerter.map(w -> w.split(" "))
+//													.map(word -> word.replaceAll("[^,.!?;]", ""))
+		                                   			.flatMap(Arrays::stream)
+		                                   			.collect(Collectors.groupingBy(String::toLowerCase, Collectors.summingInt(s -> 1)));
+	
+		return gezaehlteWoerter;
+	}
 
+	
 	public static void main(String[] args) {
 
 		System.out.println(dateiEinlesen());
+		System.out.println(woerterZaehlen(dateiEinlesen()));
+		
+		
 
 	}
 
