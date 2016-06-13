@@ -1,5 +1,8 @@
 package Aufgabe052.A03;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.function.Predicate;
@@ -13,32 +16,30 @@ import java.util.stream.Stream;
 
 public class TestDayStream {
 
-    public static void main(String args[]){
-        LocalDate startDatumAufgabeVier = LocalDate.of(2000, 1, 1);
+    public LocalDate startDatum;
 
-        System.out.println("Ausgabe Aufgabe 04, Startdatum 1.1.2000 - Limitierung 5840 Tage");
-        // Ausgabe alle Freitag mit 13.
-        DayStream.erstellenDayStream(startDatumAufgabeVier, 5840)
-                .filter(d -> d.getDayOfWeek() == DayOfWeek.FRIDAY)
-                .filter(d -> d.getDayOfMonth() == 13)
-                .forEach(System.out::println);
+    @Before
+    public void setUp(){
+        startDatum = LocalDate.of(2000, 1, 1);
+    }
 
-        System.out.println("Ausgabe Aufgabe 05, Startdatum 1.1.2000 - Limitierung auf 10 Ausgaben");
+    @Test
+    public void testRangeFreitagDen13UndSoMinAbstand(){
+        long minAbstand = DayRange.getMinAbstand(startDatum);
+        System.out.println("Min " + DayRange.getMinAbstand(startDatum));
+        //assertEquals(28, minAbstand);
+    }
 
-
-        // Ausgabe Aufgabe 05
-        LocalDate start = LocalDate.of(2000, 1, 1);
-
-        /** Fuer diese Aufgabe wurde nicht mit dem DayStream gearbeitet, sondern dynamisch ein Stream
-         * über die Methode Stream.iterate erzeugt. Hierbei wurde .iterate der Typ des zu iterierenen
-         * Objekts uebergeben und per Lambda Ausdruck mitgeteilt, was beim naechsten Iterationschritt
-         * erhoeht werden soll. Der Rest sind .filter Ausdrueck, die die geschriebene Klassen DateStreamutility
-         * nutzen und die Ergebnisse filtern.
-         */
-        Stream.iterate(start, d -> d.plusDays(1))
-                .filter(DateStreamUtility.istFreitag())
-                .filter(DateStreamUtility.tagDesMonats(13))
-                .limit(10)
-                .forEach(System.out::println);
+    @Test
+    public void testRangeFreitagDen13UndSoMaxAbstand(){
+        //System.out.println(DayRange.getMaxAbstand(startDatum));
+        System.out.println("Max " + DayRange.getMaxAbstand(startDatum));
+        //assertEquals(1823, minAbstand);
+    }
+    @Test
+    public void testRangeFreitagDen13UndSoDurchschnittsAbstand(){
+        //System.out.println(DayRange.getDurchschnittAbstand(startDatum));
+        System.out.println("Durchschnitt " + DayRange.getDurchschnittAbstand(startDatum));
+        //assertEquals(4109, minAbstand);
     }
 }
