@@ -14,7 +14,11 @@ public class PredicateUtility {
 	private PredicateUtility(){}
 
 	@SafeVarargs
-	public static <T> Predicate<T> andAll(Predicate<T>... predicates ) {
+	public static <T> Predicate<T> andAll(Predicate<T>... predicates) throws Exception{
+		if(predicates == null){
+			throw new IllegalArgumentException("Es muss mindestens ein Predicate uebergeben werden.");
+		}
+
 		Predicate<T> result = null;
 
 		for(Predicate<T> tempPre : predicates){
@@ -29,7 +33,11 @@ public class PredicateUtility {
 	}
 
 	@SafeVarargs
-	public static <T> Predicate<T> orAny(Predicate<T>... predicates){
+	public static <T> Predicate<T> orAny(Predicate<T>... predicates) throws Exception{
+		if(predicates == null){
+			throw new IllegalArgumentException("Es muss mindestens ein Predicate uebergeben werden.");
+		}
+
 		Predicate<T> result = null;
 
 		for(Predicate<T> tempPre : predicates){

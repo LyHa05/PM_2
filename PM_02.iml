@@ -5,14 +5,15 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/src/Aufgabe054" />
       <excludeFolder url="file://$MODULE_DIR$/src/Tutorium/Chris" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="module-library">
-      <library>
+      <library name="junit4">
         <CLASSES>
-          <root url="jar://$USER_HOME$/Studium/SS16/PM2/junit/junit-4.12.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.11.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -21,7 +22,18 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Studium/SS16/PM2/junit/hamcrest-core-1.3.rc2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../junit framework/hamcrest-core-1.3.rc2.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$MODULE_DIR$/../../../junit framework/hamcrest-core-1.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../junit framework/junit-4.12.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
