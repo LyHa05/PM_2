@@ -22,7 +22,7 @@ public class TestPredicateUtilty {
     public Predicate<String> palindromeMitSechsBuchsten;
 
     @Before
-    public void setUp(){
+    public void setUp() throws Exception {
         doppelBuchstabeSN = PredicateUtility.andAll(s -> s.contains("ss"),
                 s -> s.contains("nn"));
 

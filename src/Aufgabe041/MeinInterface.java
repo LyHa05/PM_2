@@ -11,5 +11,4 @@ package Aufgabe041;
 public interface MeinInterface<T> {
 
 	public boolean vergleichenVonZweiEigenschaften(T element1, T element2);
-	
 }
