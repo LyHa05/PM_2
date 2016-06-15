@@ -1,5 +1,7 @@
 package Aufgabe041;
 
+import Aufgabe054.Copyright;
+
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
@@ -7,6 +9,7 @@ package Aufgabe041;
  * Funktionales Interface, das Methode vergleichenVonZweiEigenschaften zur Verfügung stellt.
  */
 
+@Copyright(copyRightInhaber = "ich", jahr = 2016)
 @FunctionalInterface
 public interface MeinInterface<T> {
 

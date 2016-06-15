@@ -11,5 +11,8 @@ public class MeineKlasse {
 	private int zahl1;
 	private int zahl2;
 	
+	private MeineKlasse() {
+		
+	}
 
 }
