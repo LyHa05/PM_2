@@ -9,7 +9,7 @@ import Aufgabe054.Copyright;
  * Funktionales Interface, das Methode vergleichenVonZweiEigenschaften zur Verfügung stellt.
  */
 
-@Copyright(copyRightInhaber = "ich", jahr = 2016)
+@Copyright(copyRightInhaber = "wir", jahr = 2016)
 @FunctionalInterface
 public interface MeinInterface<T> {
 

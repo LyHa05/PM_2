@@ -1,5 +1,7 @@
 package Aufgabe041;
 
+import Aufgabe054.Copyright;
+
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
@@ -7,6 +9,7 @@ package Aufgabe041;
  * Einfach Klasse Auto, um Implementierung der betterElement Methode mit einer weiteren Vergleichsmethode zu testen.
  */
 
+@Copyright(copyRightInhaber = "wir", jahr = 2016)
 public class Auto {
 	
 	int ps;

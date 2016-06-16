@@ -2,18 +2,21 @@ package Aufgabe054;
 
 import static org.junit.Assert.*;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
-import java.util.Collections.*;
 
 import org.junit.Test;
+
+import Aufgabe041.MeinInterface;
+import Aufgabe041.MeineUtility;
 
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
- * @date: 12.06.2016 Diese Klasse testet die verschiedenen Möglichkeiten bei Reflecion.
+ * @date: 12.06.2016
+ * Diese Klasse testet die verschiedenen Möglichkeiten bei Reflecion.
  */
 
 public class TestKlasse {
@@ -35,7 +38,7 @@ public class TestKlasse {
 	
 	/**Methode fragt default-Konstruktor ab. */
 	@Test
-	public void testKonstrktor() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, InstantiationException, InvocationTargetException, NoSuchMethodException {
+	public void testKonstruktor() throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException, InstantiationException, InvocationTargetException, NoSuchMethodException {
 		
 		Constructor<MeineKlasse> meinKlassenKonstruktor = MeineKlasse.class.getDeclaredConstructor();
 		meinKlassenKonstruktor.setAccessible(true);
@@ -48,42 +51,29 @@ public class TestKlasse {
 		assertEquals(0,zahl2Field.get(mk2));
 	}
 	
-	
-	/**Methode erstellt von inneren Klasse ein neues Objekt*/
+	/**Methode prueft Annotation bei MeineUtility. */
 	@Test
-	public void testInnereKlasse() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-			
-		Constructor<Collections> collectorsKonstruktor = Collections.class.getDeclaredConstructor();
-		collectorsKonstruktor.setAccessible(true);
-		Collections c = (Collections)collectorsKonstruktor.newInstance();
-		Constructor<Collections> reverseComparatorKonstruktor = Collections.class.getEnclosingConstructor();
+	public void testAnnotationMeineUtility() {
+	
+		Class<MeineUtility> meineUtility = MeineUtility.class;
+		Annotation[] annotationen = meineUtility.getAnnotations();
 		
-//		Constructor<Collections> reverseComparatorKonstruktor = Collections.ReverseCompartor.class.getDeclaredConstructor().getClass();
+		for(Annotation annotationenIterator : annotationen){
+			assertEquals(true,annotationenIterator instanceof Copyright);}
 				
 	}
 	
+	/**Methode prueft Annotation bei MeinIterface.*/
 	@Test
-	public void testSingleton() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	public void testAnnotationMeinInterface() {
+	
+		@SuppressWarnings("rawtypes")
+		Class<MeinInterface> meinInterface = MeinInterface.class;
+		Annotation[] annotationen = meinInterface.getAnnotations();
 		
-		MeinSingleton.INSTANZ.getMeinSingleton() = MeinSingleton
+		for(Annotation annotationenIterator : annotationen){
+			assertEquals(true,(annotationenIterator instanceof Copyright) ||(annotationenIterator instanceof FunctionalInterface));}
 				
-				ms1 = (MeinSingleton)meinKlassenKonstruktor.newInstance();
-
-		Field zahl2Field = MeineKlasse.class.getDeclaredField("zahl2");
-		
-		zahl2Field.setAccessible(true);
-		
-		assertEquals(0,zahl2Field.get(mk2));
-		
-		Constructor<MeinSingleton> meinSingletonKonstruktor =  MeinSingleton.class.getDeclaredConstructor();
-		meinSingletonKonstruktor.setAccessible(true);
-		MeinSingleton ms1 = (MeinSingleton)meinSingletonKonstruktor.newInstance();
-		
-		field.set(this, Enum.valueOf((Class<Enum>) field.getType(), value));
-		
 	}
-	
-	
-	
 
 }
