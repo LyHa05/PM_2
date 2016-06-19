@@ -54,7 +54,7 @@ public class Controller implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		/**Medienpfad
 		 * Startmedium muss im Media-Ordner liegen, danach koennen andere Dateien geladen werden.*/
-		String path = new File("src/MediaPlayer/medium/vid.mp4").getAbsolutePath();
+		String path = new File("src/MediaPlayer/medium/dummy.mp3").getAbsolutePath();
 		medium = new Media(new File(path).toURI().toString());
 		
 		/**Erstellung des MediaPlayers*/
@@ -62,13 +62,6 @@ public class Controller implements Initializable{
 		
 		/**An MediaView wird MediaPLayer uebergeben*/
 		mediaView.setMediaPlayer(mediaPlayer);
-	
-		/**Einstellung der Fenstergroeße*/
-		DoubleProperty mvwidth = mediaView.fitWidthProperty();  
-		DoubleProperty mvheight = mediaView.fitHeightProperty(); 
-		mvwidth.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width")); 
-		mvheight.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
-
 		
 		/**Volumenanzeige*/
 		s2LautstaerkeRegler.setValue(mediaPlayer.getVolume() * 100); 

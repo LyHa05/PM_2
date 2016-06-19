@@ -12,7 +12,7 @@ import java.util.*;
  * @author: Chris Thiele
  * @author: Lydia Pflug
  * @date: 13.06.2016 Diese Utility Klasse stellt Methoden bereit, um die Range zwischen
- * den Blackfridays zu er
+ * den Blackfridays zu ermitteln.
  */
 
 public class DayRange {
@@ -45,14 +45,6 @@ public class DayRange {
         for(int i = 0; i < (listBlackFridays.size())-1; i++){
             rangeBetweenDates.add(Duration.between(listBlackFridays.get(i).atTime(0, 0), listBlackFridays.get(i+1).atTime(0, 0)).toDays());
         }
-
-/**        for(LocalDate ausseresDate : listBlackFridays){
-            for(LocalDate inneresDate : listBlackFridays){
-                if(ausseresDate.isBefore(inneresDate)){
-                    rangeBetweenDates.add(Duration.between(ausseresDate.atTime(0, 0), inneresDate.atTime(0, 0)).toDays());
-                }
-            }
-        }*/
 
         return rangeBetweenDates;
     }

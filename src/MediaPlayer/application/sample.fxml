@@ -39,7 +39,7 @@ In der sample.fxml-Datei sind die Container und die Controls für das graphische
                      </effect></Slider>
                   <Label fx:id="l1MaximaleLaufzeit" text="Laufzeit">
                      <font>
-                        <Font name="Segoe UI" size="13.0"/>
+                        <Font name="Segoe UI" size="13.0" />
                      </font></Label>
                </children>
                <effect>
@@ -87,7 +87,7 @@ In der sample.fxml-Datei sind die Container und die Controls für das graphische
       </VBox>
    </bottom>
    <top>
-      <MenuBar prefHeight="29.0" prefWidth="716.0" style="-fx-background-color: #979aaa; -fx-translate-y: -5;" BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menueBar" prefHeight="29.0" prefWidth="716.0" style="-fx-background-color: #747474; -fx-translate-y: -5;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Datei">
             <items>
