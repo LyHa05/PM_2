@@ -16,7 +16,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Group;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
@@ -41,32 +40,29 @@ public class Controller implements Initializable{
 
 	/**Variablendeklaration: Objekte aus xml Datei geparst*/
 	Group root = new Group();
-	@FXML BorderPane bgWindowPane;
+	@FXML BorderPane hinterGrundBorderPane;
 	@FXML private MediaView mediaView;
 	private MediaPlayer mediaPlayer;
-	private Media media;
-	@FXML Slider volumeSlider;
-	@FXML VBox uiBox;
-	@FXML Slider runTimeSlider;
-	@FXML Label labelActualRuntime;
-	@FXML Label labelMaxRuntime;
-	@FXML Button vollBildModus;
+	private Media medium;
+	@FXML Slider s2LautstaerkeRegler;
+	@FXML VBox menueBand;
+	@FXML Slider s1LaufzeitRegler;
+	@FXML Label l2AktuelleLaufzeit;
+	@FXML Label l1MaximaleLaufzeit;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		/**Medienpfad
 		 * Startmedium muss im Media-Ordner liegen, danach koennen andere Dateien geladen werden.*/
-		String path = new File("src/MediaPlayer/media/vid.mp4").getAbsolutePath();
-		media = new Media(new File(path).toURI().toString());
+		String path = new File("src/MediaPlayer/medium/vid.mp4").getAbsolutePath();
+		medium = new Media(new File(path).toURI().toString());
 		
 		/**Erstellung des MediaPlayers*/
-		mediaPlayer = new MediaPlayer(media);
+		mediaPlayer = new MediaPlayer(medium);
 		
 		/**An MediaView wird MediaPLayer uebergeben*/
 		mediaView.setMediaPlayer(mediaPlayer);
-		
-		vollBildModus.getStyleClass().add("vollBildButton"); /** Quelle: http://images.google.de/imgres?imgurl=http%3A%2F%2Fwww.tenforums.com%2Fgeek%2Fgars%2Fimages%2F2%2Ftypes%2Fthumb_full-screen.png&imgrefurl=http%3A%2F%2Fwww.tenforums.com%2Ftutorials%2F2435-apps-display-full-screen-view-windows-10-a.html&h=250&w=250&tbnid=gRl-7x9fBHnl0M%3A&docid=uoU5OfJ6GT9p-M&ei=rVNkV7DEAoqMsAG9r5TQBw&tbm=isch&client=firefox-b&iact=rc&uact=3&dur=858&page=1&start=0&ndsp=22&ved=0ahUKEwjwzqzu6a_NAhUKBiwKHb0XBXoQMwggKAIwAg&bih=565&biw=1280*/
-		
+	
 		/**Einstellung der Fenstergroeße*/
 		DoubleProperty mvwidth = mediaView.fitWidthProperty();  
 		DoubleProperty mvheight = mediaView.fitHeightProperty(); 
@@ -75,32 +71,32 @@ public class Controller implements Initializable{
 
 		
 		/**Volumenanzeige*/
-		volumeSlider.setValue(mediaPlayer.getVolume() * 100); //*100 so that getvolume and slidervalue will match
-		volumeSlider.valueProperty().addListener(new InvalidationListener() { //Volume Slider
+		s2LautstaerkeRegler.setValue(mediaPlayer.getVolume() * 100); 
+		s2LautstaerkeRegler.valueProperty().addListener(new InvalidationListener() { 
 			
 			@Override
 			public void invalidated(Observable observable) {
-				mediaPlayer.setVolume(volumeSlider.getValue() / 100); //Give us the Value in relation to 100 so /100 is needed
+				mediaPlayer.setVolume(s2LautstaerkeRegler.getValue() / 100); 
 				
 			}
 		});
 		
 		
 		/**Laufzeitanzeige*/
-		runTimeSlider.setMin(0.0);
-		runTimeSlider.setValue(0.0);
-		runTimeSlider.setMax(200);
+		s1LaufzeitRegler.setMin(0.0);
+		s1LaufzeitRegler.setValue(0.0);
+		s1LaufzeitRegler.setMax(200);
 		
 		mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
 			@Override
 			public void changed(ObservableValue<? extends Duration> observableValue, Duration duration, Duration current){
-			runTimeSlider.setValue(current.toSeconds());
+			s1LaufzeitRegler.setValue(current.toSeconds());
 			}
 			});
-			runTimeSlider.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			s1LaufzeitRegler.setOnMouseClicked(new EventHandler<MouseEvent>() {
 				@Override
 				public void handle(MouseEvent mouseevent) {
-					mediaPlayer.seek(Duration.seconds(runTimeSlider.getValue()));
+					mediaPlayer.seek(Duration.seconds(s1LaufzeitRegler.getValue()));
 				}
 				
 			});
@@ -108,35 +104,34 @@ public class Controller implements Initializable{
 			
 			/**Aktueller Zeitstatus*/
 			mediaPlayer.currentTimeProperty().addListener((Observable ov) -> {
-				updateValues();
+				werteAktualisieren();
 			});
 	}
 	
 	
 	/**Methode zum Aktualisieren der Lautstaerkeanzeige*/
-	protected void updateValues() {
-			double tempActTime = mediaPlayer.getCurrentTime().toSeconds();
-			int temptActTimeInt = (int) tempActTime;
-			String maxActTime = String.format("%02d:%02d:%02d",temptActTimeInt / 3600, (temptActTimeInt % 3600) / 60, (temptActTimeInt % 60));
-			labelActualRuntime.setText(maxActTime);
-
+	protected void werteAktualisieren() {
+			double aktuelleZeitDB = mediaPlayer.getCurrentTime().toSeconds();
+			int aktuelleZeitInt = (int) aktuelleZeitDB;
+			String maxZeit = String.format("%02d:%02d:%02d",aktuelleZeitInt / 3600, (aktuelleZeitInt % 3600) / 60, (aktuelleZeitInt % 60));
+			l2AktuelleLaufzeit.setText(maxZeit);
 	}
 	
 	/**Methode zur Dateiauswahl*/
-	public void fileChooser(ActionEvent event) {
-		FileChooser fc = new FileChooser();
-		fc.getExtensionFilters().add(new ExtensionFilter("*.flv", "*.mp4", "*.mpeg", "*.wav", "*.mp3"));
-		File file = fc.showOpenDialog(null);
+	public void dateiAuswahl(ActionEvent event) {
+		FileChooser fileChooserObj = new FileChooser();
+		fileChooserObj.getExtensionFilters().add(new ExtensionFilter("*.flv", "*.mp4", "*.mpeg", "*.wav", "*.mp3"));
+		File file = fileChooserObj.showOpenDialog(null);
 		String path = file.getAbsolutePath();
 		mediaPlayer.pause();
 
-		media = new Media(new File(path).toURI().toString());
-		mediaPlayer = new MediaPlayer(media);
+		medium = new Media(new File(path).toURI().toString());
+		mediaPlayer = new MediaPlayer(medium);
 		mediaView.setMediaPlayer(mediaPlayer);
 		
-		String mediaName = media.getMetadata().toString();
-		Stage stage = (Stage) bgWindowPane.getScene().getWindow();
-		stage.setTitle("SD Media Player" + mediaName);
+		String mediumsName = medium.getMetadata().toString();
+		Stage stageObj = (Stage) hinterGrundBorderPane.getScene().getWindow();
+		stageObj.setTitle("SD Media Player" + mediumsName);
 	}
 
 	/**Methode fuer Play-Button*/
@@ -144,14 +139,14 @@ public class Controller implements Initializable{
 		mediaPlayer.play();
 		mediaPlayer.setRate(1);
 		
-		//Set RunTimeSlider to Max RunTime
-		runTimeSlider.setMax(mediaPlayer.getTotalDuration().toSeconds()); //set the max length of runtimeslider at play/start of video
+		/**Anpassen des Laufzeitreglers an max Laufzeit*/
+		s1LaufzeitRegler.setMax(mediaPlayer.getTotalDuration().toSeconds());
 	
-		//Set Label to Max Runtime
+		/**Setzen des Labels fuer maximale Laufzeit des Mediums*/
 		double tempTime = mediaPlayer.getTotalDuration().toSeconds();
 		int temptTimeInt = (int) tempTime;
 		String maxTime = String.format("%02d:%02d:%02d",temptTimeInt / 3600, (temptTimeInt % 3600) / 60, (temptTimeInt % 60));
-		labelMaxRuntime.setText(maxTime);
+		l1MaximaleLaufzeit.setText(maxTime);
 	
 	}
 	
@@ -160,25 +155,25 @@ public class Controller implements Initializable{
 		mediaPlayer.pause();
 	}
 	
-	/**Methode fuer Beschleunigungs-Button*/
-	public void fast(ActionEvent event) {
-		mediaPlayer.setRate(2); //double the speed of the media
+	/**Methode fuer Beschleunigungsbutton*/
+	public void beschleunigen(ActionEvent event) {
+		mediaPlayer.setRate(2);
 	}
 	
 	/**Methode fuer Verlangsamungsbutton*/
-	public void slow(ActionEvent event) {
-		mediaPlayer.setRate(.5); //half speed
+	public void verlangsamen(ActionEvent event) {
+		mediaPlayer.setRate(.5);
 	}
 
-	/**Methode fuer Stop-Button*/
+	/**Methode fuer Stop-Button (Video wird auf Anfang zurueckgesetzt)*/
 	public void stop(ActionEvent event) {
-		mediaPlayer.seek(mediaPlayer.getStartTime()); //only move video to start but will not play
+		mediaPlayer.seek(mediaPlayer.getStartTime()); 
 		mediaPlayer.stop();
 	}
 	
 	/**Methode fuer Informationsausgabe.*/
 	@FXML
-	private void handleAbout() {
+	private void informationen() {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("Unser Media Player");
 		alert.setHeaderText("Ueber unseren Media Player");
@@ -187,16 +182,10 @@ public class Controller implements Initializable{
 		alert.showAndWait();
 	}
 
-	/**Methode fuer Vollbildmodus.*/
-	@FXML
-	private void handleFullscreen() {
-		Stage stage = (Stage) bgWindowPane.getScene().getWindow();
-		stage.setFullScreen(true);
-	}
-	
+		
 	/**Methode zum Schliessen der Anwendung.*/
 	@FXML
-	private void handleExit() {
+	private void schliessen() {
 		System.exit(0);
 	}
 		

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -24,21 +23,21 @@
 In der sample.fxml-Datei sind die Container und die Controls für das graphische Interface definiert.
 -->
 
-<BorderPane fx:id="bgWindowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MediaPlayer.application.Controller">
+<BorderPane fx:id="hinterGrundBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MediaPlayer.application.Controller">
    <center>
       <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <bottom>
-      <VBox fx:id="uiBox" prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="menueBand" prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #979aaa; -fx-border-color: red; -fx-border-width: 0.5; -fx-background-radius: 7; -fx-border-radius: 7;">
                <children>
-                  <Label fx:id="labelActualRuntime" text="RT" />
-                  <Slider fx:id="runTimeSlider" prefHeight="16.0" prefWidth="443.0">
+                  <Label fx:id="l2AktuelleLaufzeit" text="Laufzeit" />
+                  <Slider fx:id="s1LaufzeitRegler" prefHeight="16.0" prefWidth="443.0">
                      <effect>
                         <DropShadow height="11.89" radius="6.205" spread="0.25" width="14.93" />
                      </effect></Slider>
-                  <Label fx:id="labelMaxRuntime" text="MaxRT">
+                  <Label fx:id="l1MaximaleLaufzeit" text="max. Laufzeit">
                      <font>
                         <Font name="Segoe UI" size="13.0" />
                      </font></Label>
@@ -62,31 +61,23 @@ In der sample.fxml-Datei sind die Container und die Controls für das graphische
                         <Font name="Segoe UI" size="13.0" />
                      </font></Button>
                   <Pane prefHeight="36.0" prefWidth="48.0" />
-                  <Button mnemonicParsing="false" onAction="#slow" text="x0.5">
+                  <Button mnemonicParsing="false" onAction="#verlangsamen" text="x0.5">
                      <font>
                         <Font name="Segoe UI" size="13.0" />
                      </font></Button>
-                  <Button mnemonicParsing="false" onAction="#fast" prefHeight="27.0" prefWidth="46.0" text="x2">
+                  <Button mnemonicParsing="false" onAction="#beschleunigen" prefHeight="27.0" prefWidth="46.0" text="x2">
                      <font>
                         <Font name="Segoe UI" size="13.0" />
                      </font></Button>
                   <Pane prefHeight="36.0" prefWidth="17.0" />
                   <VBox alignment="CENTER" prefHeight="36.0" prefWidth="126.0">
                      <children>
-                        <Slider fx:id="volumeSlider" prefHeight="46.0" prefWidth="125.0">
+                        <Slider fx:id="s2LautstaerkeRegler" prefHeight="46.0" prefWidth="125.0">
                            <effect>
                               <DropShadow height="11.89" radius="5.445" spread="0.36" width="11.89" />
                            </effect></Slider>
                      </children>
                   </VBox>
-                  <Button fx:id="vollBildModus" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#handleFullscreen" prefHeight="27.0" prefWidth="34.0" style="-fx-background-color: #ff2800;">
-                     <font>
-                        <Font name="Segoe UI Bold" size="13.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="CROSSHAIR" />
-                     </cursor>
-                  </Button>
                </children>
                <effect>
                   <Bloom threshold="0.72" />
@@ -98,20 +89,15 @@ In der sample.fxml-Datei sind die Container und die Controls für das graphische
    <top>
       <MenuBar prefHeight="29.0" prefWidth="716.0" style="-fx-background-color: #979aaa; -fx-translate-y: -5;" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Datei">
             <items>
-                  <MenuItem mnemonicParsing="false" onAction="#fileChooser" text="Open Media File" />
-              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#dateiAuswahl" text="Medium öffnen" />
+              <MenuItem mnemonicParsing="false" onAction="#schliessen" text="Beenden" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Hilfe">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#informationen" text="Informationen" />
             </items>
           </Menu>
         </menus>
