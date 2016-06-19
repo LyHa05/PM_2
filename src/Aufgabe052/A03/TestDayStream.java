@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 /**
  * @author: Chris Thiele
  * @author: Lydia Pflug
- * @date: 07.06.2016 Diese Klasse testet die PredicateUtilty Klasse
+ * @date: 07.06.2016 Diese Klasse die Funktionalitaet der unbegrenzente Streams.
  */
 
 public class TestDayStream {

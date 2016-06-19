@@ -1,6 +1,6 @@
 package Aufgabe054;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
