@@ -30,23 +30,23 @@ In der sample.fxml-Datei sind die Container und die Controls für das graphische
    <bottom>
       <VBox fx:id="menueBand" prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #979aaa; -fx-border-color: red; -fx-border-width: 0.5; -fx-background-radius: 7; -fx-border-radius: 7;">
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="600.0" spacing="15.0" style="-fx-background-color: #767676; -fx-border-color: #767676; -fx-border-width: 0.5;">
                <children>
                   <Label fx:id="l2AktuelleLaufzeit" text="Laufzeit" />
                   <Slider fx:id="s1LaufzeitRegler" prefHeight="16.0" prefWidth="443.0">
                      <effect>
                         <DropShadow height="11.89" radius="6.205" spread="0.25" width="14.93" />
                      </effect></Slider>
-                  <Label fx:id="l1MaximaleLaufzeit" text="max. Laufzeit">
+                  <Label fx:id="l1MaximaleLaufzeit" text="Laufzeit">
                      <font>
-                        <Font name="Segoe UI" size="13.0" />
+                        <Font name="Segoe UI" size="13.0"/>
                      </font></Label>
                </children>
                <effect>
                   <Bloom threshold="0.72" />
                </effect>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" spacing="6.0" style="-fx-background-color: #ff2800; -fx-border-color: black; -fx-border-width: 0.5; -fx-background-radius: 7; -fx-border-radius: 7;">
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" spacing="6.0" style="-fx-background-color: #747474; -fx-border-color: #767676; -fx-border-width: 0.5;">
                <children>
                   <Button mnemonicParsing="false" onAction="#pause" text="Pause">
                      <font>

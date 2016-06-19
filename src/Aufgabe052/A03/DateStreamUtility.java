@@ -13,7 +13,7 @@ import java.util.function.Predicate;
  */
 public class DateStreamUtility {
 
-    private DateStreamUtility() {};
+    private DateStreamUtility() {}
     static Predicate<LocalDate> istFreitag(){
         return d -> d.getDayOfWeek() == DayOfWeek.FRIDAY;
     }
