@@ -120,7 +120,7 @@ public class Controller implements Initializable{
 	/**Methode zur Dateiauswahl*/
 	public void dateiAuswahl(ActionEvent event) {
 		FileChooser fileChooserObj = new FileChooser();
-		fileChooserObj.getExtensionFilters().add(new ExtensionFilter("*.flv", "*.mp4", "*.wav", "*.mp3"));
+		fileChooserObj.getExtensionFilters().add(new ExtensionFilter("*.wav", "*.mp3", "*.aac"));
 		File file = fileChooserObj.showOpenDialog(null);
 		String path = file.getAbsolutePath();
 		mediaPlayer.pause();
@@ -128,10 +128,6 @@ public class Controller implements Initializable{
 		medium = new Media(new File(path).toURI().toString());
 		mediaPlayer = new MediaPlayer(medium);
 		mediaView.setMediaPlayer(mediaPlayer);
-		
-		String mediumsName = medium.getMetadata().toString();
-		Stage stageObj = (Stage) hinterGrundBorderPane.getScene().getWindow();
-		stageObj.setTitle("SD Media Player" + mediumsName);
 	}
 
 	/**Methode fuer Play-Button*/
