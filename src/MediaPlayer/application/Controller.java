@@ -120,7 +120,7 @@ public class Controller implements Initializable{
 	/**Methode zur Dateiauswahl*/
 	public void dateiAuswahl(ActionEvent event) {
 		FileChooser fileChooserObj = new FileChooser();
-		fileChooserObj.getExtensionFilters().add(new ExtensionFilter("*.flv", "*.mp4", "*.mpeg", "*.wav", "*.mp3"));
+		fileChooserObj.getExtensionFilters().add(new ExtensionFilter("*.flv", "*.mp4", "*.wav", "*.mp3"));
 		File file = fileChooserObj.showOpenDialog(null);
 		String path = file.getAbsolutePath();
 		mediaPlayer.pause();
