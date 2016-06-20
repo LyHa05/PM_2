@@ -52,4 +52,14 @@ public class DateiLesen {
 		return gezaehlteWoerter;
 	}
 
+
+	public static void main(String[] args) {
+
+		System.out.println(dateiEinlesen());
+		System.out.println(woerterZaehlen(dateiEinlesen()));
+
+
+
+	}
+
 }
