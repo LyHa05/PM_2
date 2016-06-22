@@ -27,20 +27,33 @@ public class StringListUtility {
         return sumLength;
     }
 
-    public List<String> reverseAllStrings(List<String> sList){
+    public static List<String> reverseAllStrings(List<String> sList){
         List<String> reversedList = sList.stream().map(string -> new StringBuilder(string)
                 .reverse()
                 .toString())
                 .collect(Collectors.toList());
         return reversedList;
     }
+    
 
-    //public boolean containsNumber(List<String> sList){
-    //    boolean contains = sList.stream().
-    //}
+    public static boolean containsNumber(List<String> sList){
+    	/**
+    	 * Die Methode wandelt eine Liste in einen Stream um und ueberprueft mit 'anyMatch'
+    	 * ob einer der Strings die Bedingung erfuellt, dass dieser nur aus Zahlen besteht.
+    	 * Um dies zu bewerkstelligen wird wiederum jeder String in einen neuen Stream
+    	 * aufgeloest und es wird mit 'allMatch' ueberprueft ob eine der Stringklassen
+    	 * nur aus Zahlen besteht. Damit der Vergleich mit den ASCII Werten statt findet,
+    	 * werden die vergleichs Ziffern als Chars geschrieben ('0' & '0')
+    	 */
+        return sList.stream().anyMatch(s -> s.chars().allMatch(c -> c >= '0' && c <= '9'));
+    }
 
     public static Map<Integer, List<String>> groupByLength(List<String> sList){
-        Map<Integer, List<String>> mapString = sList.stream().collect(Collectors.toMap(s -> s.length(), s -> ));
+    	/**
+    	 * Die Methode gruppiert eine Liste nach der Wortlaenge ihrer Elemente und gibt
+    	 * diese zurueck.
+    	 */
+        Map<Integer, List<String>> mapString = sList.stream().collect(Collectors.groupingBy(String::length));
         return mapString;
     }
 

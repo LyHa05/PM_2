@@ -13,6 +13,7 @@ public class StringTest {
         List<String> sList = new ArrayList<>();
 
         sList.add("bla");
+        sList.add("1337133742");
         sList.add("kkk");
         sList.add("blablabla");
         sList.add("x");
@@ -27,5 +28,12 @@ public class StringTest {
         System.out.println(StringListUtility.longestStringLength(sList));
         System.out.println(StringListUtility.cumulatedlength(sList));
         System.out.println(StringListUtility.groupByLength(sList));
+        System.out.println(StringListUtility.containsNumber(sList));
+        System.out.println("\n");
+        System.out.println(StringListUtilityOhne.shortestString(sList));
+        System.out.println(StringListUtilityOhne.longestStringLength(sList));
+        System.out.println(StringListUtilityOhne.cumulatedlength(sList));
+        System.out.println(StringListUtility.groupByLength(sList));
+        System.out.println(StringListUtilityOhne.containsNumber(sList));
     }
 }
