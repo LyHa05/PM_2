@@ -32,6 +32,7 @@ public class DieNichtSoSpecialMuelltonne {
 		return Double.NaN;
 	}
 	
+	
 	public static int findMax(int[][] matrix){
 		int xLength = matrix.length;
 		int yLength = matrix[0].length;
